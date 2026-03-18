@@ -1,0 +1,221 @@
+/* ============================================================
+   GOLDEOR — Logos Social Proof
+   logos.css
+   Carrousel infini — cartes glassmorphiques + bordure argentée
+   ============================================================ */
+
+.logos {
+  padding: 52px 0;
+  overflow: hidden;
+}
+
+.logos__label {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+/* ── Wrapper avec fade sur les bords ──────────────────────── */
+
+.logos__track-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.logos__track-wrapper::before,
+.logos__track-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos__track-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-page, #0d0d12) 10%, transparent 100%);
+}
+
+.logos__track-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-page, #0d0d12) 10%, transparent 100%);
+}
+
+/* ── Piste infinie ────────────────────────────────────────── */
+
+.logos__track {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: max-content;
+  padding: 16px 0;
+  animation: logoScroll 65s linear infinite;
+  will-change: transform;
+}
+
+/* Pause globale seulement si aucune carte n'est survolée */
+.logos__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Carte glassmorphique ─────────────────────────────────── */
+
+.logos__card {
+  flex-shrink: 0;
+  width: 168px;
+  height: 92px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 22px;
+  cursor: default;
+  position: relative;
+
+  /* Fond verre sombre qui laisse transparaître le bg */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+  /* Bordure argentée shiny via border-image + pseudo-element */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+
+  /* Ombre portée douce */
+  box-shadow:
+    inset 0 1px 0     rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0    rgba(0,   0,   0,   0.18),
+    inset 1px 0 0     rgba(255, 255, 255, 0.06),
+    inset -1px 0 0    rgba(0,   0,   0,   0.10),
+    0 6px 28px        rgba(0,   0,   0,   0.40),
+    0 1px 4px         rgba(0,   0,   0,   0.30);
+
+  transition:
+    transform    0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow   0.38s ease,
+    background   0.38s ease;
+}
+
+/* Bordure argentée shiny — pseudo-élément qui peint le contour */
+.logos__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;                /* épaisseur de la bordure */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.70)  0%,
+    rgba(200, 200, 230, 0.25) 25%,
+    rgba(120, 120, 160, 0.08) 50%,
+    rgba(200, 200, 230, 0.20) 75%,
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Reflet lumineux en haut de la carte */
+.logos__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.55) 70%,
+    transparent
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Hover : surélévation ─────────────────────────────────── */
+
+.logos__card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    inset 0 1px 0     rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0    rgba(0,   0,   0,   0.10),
+    inset 1px 0 0     rgba(255, 255, 255, 0.10),
+    inset -1px 0 0    rgba(0,   0,   0,   0.06),
+    0 24px 56px       rgba(0,   0,   0,   0.55),
+    0 8px  24px       rgba(0,   0,   0,   0.35),
+    0 0   32px        rgba(180, 160, 255, 0.10);
+}
+
+/* Bordure encore plus lumineuse au hover */
+.logos__card:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.90)  0%,
+    rgba(210, 210, 255, 0.40) 20%,
+    rgba(150, 140, 200, 0.12) 50%,
+    rgba(210, 210, 255, 0.35) 80%,
+    rgba(255, 255, 255, 0.88) 100%
+  );
+}
+
+/* ── Logo à l'intérieur de la carte ──────────────────────── */
+
+.logos__card img {
+  max-width: 100%;
+  max-height: 42px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.45;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover : couleurs originales du logo */
+.logos__card:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .logos__card {
+    width: 136px;
+    height: 76px;
+    border-radius: 16px;
+    padding: 14px 16px;
+  }
+
+  .logos__track {
+    gap: 14px;
+    animation-duration: 44s;
+  }
+
+  .logos__track-wrapper::before,
+  .logos__track-wrapper::after {
+    width: 80px;
+  }
+}

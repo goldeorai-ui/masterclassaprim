@@ -1,0 +1,329 @@
+/* ============================================================
+   GOLDEOR — Section Programme
+   programme.css
+   Cartes pricing-card style : aurora, badge sphère, deco shapes
+   ============================================================ */
+
+.programme {
+  position: relative;
+  overflow: hidden;
+}
+
+.programme__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.programme__title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  background: var(--heading-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.programme__subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── Grille des deux cartes ───────────────────────────────── */
+
+.programme__sessions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* ── Carte — pricing-card inspired ───────────────────────── */
+
+.prog-card {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  padding: 26px 28px 26px;
+  display: flex;
+  flex-direction: column;
+
+  /* Fond sombre légèrement teinté */
+  background: rgba(14, 14, 22, 0.78);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.13),
+    inset 0 -1px 0 rgba(0,0,0,0.18),
+    0 6px 28px rgba(0,0,0,0.40);
+
+  transition: box-shadow 0.45s ease;
+}
+
+/* Bordure argentée shiny — style logos */
+.prog-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    rgba(255,255,255,0.70) 0%, rgba(200,200,230,0.25) 25%,
+    rgba(120,120,160,0.08) 50%, rgba(200,200,230,0.20) 75%,
+    rgba(255,255,255,0.65) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Aurora colorée en haut du bloc */
+.prog-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 220px;
+  background: var(--prog-aurora);
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* Tous les enfants au-dessus de l'aurora */
+.prog-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover : lift + halo de couleur */
+.prog-card:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 4px 48px rgba(0,0,0,0.65),
+    0  0  60px var(--prog-glow-soft),
+    0  0 100px var(--prog-glow-soft);
+}
+
+/* ── Couleurs par carte ───────────────────────────────────── */
+
+.prog-card--1 {
+  --prog-aurora: radial-gradient(ellipse 90% 65% at 50% -10%,
+    rgba(30, 130, 255, 0.55) 0%,
+    rgba(10,  80, 200, 0.20) 55%,
+    transparent 100%);
+  --prog-glow:   rgba(40, 130, 255, 0.22);
+  --prog-glow-soft: rgba(40, 130, 255, 0.08);
+  --prog-check:  #47FFEE;
+  --prog-accent: #64b5ff;
+  --badge-sphere: radial-gradient(circle at 35% 32%, #9FD8FF 0%, #2196F3 45%, #0a3d8f 100%);
+  --badge-glow:  rgba(33, 150, 243, 0.55);
+}
+
+.prog-card--2 {
+  --prog-aurora: radial-gradient(ellipse 90% 65% at 50% -10%,
+    rgba(140, 50, 255, 0.58) 0%,
+    rgba( 80, 20, 180, 0.22) 55%,
+    transparent 100%);
+  --prog-glow:   rgba(140, 50, 255, 0.22);
+  --prog-glow-soft: rgba(140, 50, 255, 0.08);
+  --prog-check:  #c285ff;
+  --prog-accent: #c285ff;
+  --badge-sphere: radial-gradient(circle at 35% 32%, #E0AAFF 0%, #9C27B0 45%, #3a006e 100%);
+  --badge-glow:  rgba(156, 39, 176, 0.55);
+}
+
+/* ── Badge / sphère glassmorphique haut gauche ────────────── */
+
+.prog-card__badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--badge-sphere);
+  box-shadow:
+    0 0 20px var(--badge-glow),
+    inset 0 2px 8px  rgba(255,255,255,0.35),
+    inset 0 -3px 8px rgba(0,0,0,0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.prog-card__badge svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+/* ── Textes du bloc ───────────────────────────────────────── */
+
+.prog-card__meta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--prog-accent);
+  margin-bottom: 10px;
+}
+
+.prog-card__day {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.prog-card__title {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.prog-card__desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ── Séparateur "AU PROGRAMME" ────────────────────────────── */
+
+.prog-card__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  white-space: nowrap;
+}
+
+.prog-card__divider::before,
+.prog-card__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+}
+
+/* ── Modules ──────────────────────────────────────────────── */
+
+.prog-card__modules {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.prog-card__module {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.prog-card__check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--prog-check);
+  color: var(--prog-check);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+.prog-card__module strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Bouton CTA ───────────────────────────────────────────── */
+
+.prog-card__cta {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px 24px;
+  border-radius: var(--btn-radius);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--btn-gradient);
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 2px 12px rgba(180, 120, 240, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prog-card__cta:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 8px 32px rgba(167, 139, 250, 0.45),
+    0 4px 20px rgba(94, 234, 212, 0.35);
+}
+
+/* ── Footer du programme ──────────────────────────────────── */
+
+.programme__footer {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--border-radius-card);
+}
+
+.programme__footer-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .programme__sessions {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .prog-card {
+    padding: 26px 22px;
+  }
+
+  .prog-card__deco {
+    display: none;
+  }
+}

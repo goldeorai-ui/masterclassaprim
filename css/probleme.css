@@ -1,0 +1,569 @@
+/* ============================================================
+   GOLDEOR — Section Problème
+   probleme.css
+   ============================================================ */
+
+.probleme {
+  position: relative;
+  overflow: hidden;
+}
+
+.probleme__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.probleme__title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  background: var(--heading-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.probleme__title em {
+  font-style: normal;
+  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.probleme__subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── Grille ───────────────────────────────────────────────── */
+
+.probleme__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+/* ── Carte — style glassmorphique login-card ──────────────── */
+
+.probleme__card {
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+
+  /* Fond très sombre — se fond dans le black */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(22px) saturate(130%);
+  -webkit-backdrop-filter: blur(22px) saturate(130%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    inset 0 -1px 0 rgba(0,0,0,0.20),
+    0 2px 32px rgba(0,0,0,0.50);
+
+  transition:
+    transform   0.40s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow  0.40s ease,
+    background  0.40s ease;
+}
+
+/* Bordure dégradée subtile */
+.probleme__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.13)  0%,
+    rgba(255,255,255,0.04) 35%,
+    rgba(0,0,0,0)          55%,
+    rgba(255,255,255,0.07) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Lueur colorée atmosphérique en haut à gauche — détail clé */
+.probleme__card::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--card-glow, rgba(194,133,255,0.18)) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tous les enfants au-dessus des pseudo-éléments */
+.probleme__card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover */
+.probleme__card:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.11),
+    inset 0 -1px 0 rgba(0,0,0,0.12),
+    0 22px 64px rgba(0,0,0,0.60),
+    0  0  50px var(--card-glow, rgba(194,133,255,0.09));
+}
+
+/* ── Couleurs uniques par carte ───────────────────────────── */
+
+.probleme__card--1 { --card-glow: rgba(255, 90, 120, 0.22); }
+.probleme__card--2 { --card-glow: rgba(255,175,  50, 0.20); }
+.probleme__card--3 { --card-glow: rgba( 80,140, 255, 0.20); }
+.probleme__card--4 { --card-glow: rgba(180,100, 255, 0.20); }
+.probleme__card--5 { --card-glow: rgba( 60,220, 200, 0.20); }
+.probleme__card--6 { --card-glow: rgba(240, 80, 200, 0.20); }
+
+/* ── Icône glassmorphique ─────────────────────────────────── */
+
+.prob-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Blob coloré derrière — la "couleur" de l'icône */
+.prob-icon::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 19px;
+  background: var(--icon-gradient);
+  opacity: 0.55;
+  filter: blur(10px);
+  z-index: 0;
+}
+
+/* Couche verre sombre par-dessus le blob */
+.prob-icon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(8, 8, 12, 0.58);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.11);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.13);
+  z-index: 1;
+}
+
+/* SVG au-dessus de la couche de verre */
+.prob-icon svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Gradients d'icônes par carte */
+.prob-icon--1 { --icon-gradient: linear-gradient(135deg, #ff6b9d 0%, #c9184a 100%); }
+.prob-icon--2 { --icon-gradient: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
+.prob-icon--3 { --icon-gradient: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%); }
+.prob-icon--4 { --icon-gradient: linear-gradient(135deg, #c285ff 0%, #7b2ff7 100%); }
+.prob-icon--5 { --icon-gradient: linear-gradient(135deg, #47FFEE 0%, #0575E6 100%); }
+.prob-icon--6 { --icon-gradient: linear-gradient(135deg, #f953c6 0%, #b91d73 100%); }
+
+/* ── Texte des cartes ─────────────────────────────────────── */
+
+.probleme__card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.probleme__card-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Bloc texte long (LP-A et LP-B) ──────────────────────── */
+
+.probleme__body {
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.probleme__p {
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.90;
+  margin-bottom: 28px;
+  color: var(--text-secondary);
+  opacity: 0.15; /* état initial — allumé par text-reveal.js */
+}
+
+.probleme__p .text-accent {
+  color: var(--accent-cyan);
+}
+
+.probleme__p em {
+  font-style: italic;
+}
+
+.probleme__quote {
+  font-style: italic;
+  border-left: 3px solid var(--accent-cyan);
+  padding: 16px 24px;
+  margin: 36px 0 0;
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.75;
+  border-radius: 0 8px 8px 0;
+  background: rgba(71, 255, 238, 0.04);
+  color: var(--accent-cyan);
+  opacity: 0.15;
+}
+
+/* ── 3 Blocs problème (style pricing cards) ──────────────── */
+
+.problem-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.problem-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+    0 6px 28px rgba(0, 0, 0, 0.40);
+  transition:
+    transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.38s ease;
+  /* Animation scroll — état initial caché */
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+/* Carte centrale — entre par le bas */
+.problem-card:nth-child(2) {
+  transform: translateY(60px);
+}
+
+/* Carte droite — entre par la droite */
+.problem-card:nth-child(3) {
+  transform: translateX(60px);
+}
+
+/* État visible — déclenché par JS */
+.problem-card.pb-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.38s ease;
+}
+
+.problem-card.pb-visible:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.problem-card.pb-visible:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+/* Hover — surélévation */
+.problem-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.10),
+    0 24px 56px rgba(0, 0, 0, 0.55),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Bordure argentée shiny — même style que logos__card */
+.problem-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.70)  0%,
+    rgba(200, 200, 230, 0.25) 25%,
+    rgba(120, 120, 160, 0.08) 50%,
+    rgba(200, 200, 230, 0.20) 75%,
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Liseré lumineux en haut */
+.problem-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0.55) 70%,
+    transparent
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.problem-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.problem-card--active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Icône avec lueur ────────────────────────────────────── */
+
+.problem-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  position: relative;
+}
+
+.problem-card__icon--red {
+  background: rgba(232, 93, 74, 0.15);
+  color: #E85D4A;
+  box-shadow: 0 0 20px rgba(232, 93, 74, 0.25), 0 0 40px rgba(232, 93, 74, 0.10);
+}
+
+.problem-card__icon--cyan {
+  background: rgba(45, 212, 191, 0.15);
+  color: #2DD4BF;
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.25), 0 0 40px rgba(45, 212, 191, 0.10);
+}
+
+.problem-card__icon--purple {
+  background: rgba(123, 97, 255, 0.15);
+  color: #7B61FF;
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.25), 0 0 40px rgba(123, 97, 255, 0.10);
+}
+
+.problem-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.problem-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.problem-card__list li {
+  font-size: 14px;
+  color: #CCCCCC;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.problem-card__list--negative li::before {
+  content: "\2715";
+  color: #E85D4A;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.problem-card__list--positive li::before {
+  content: "\2713";
+  color: #2DD4BF;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.problem-card__list--results li::before {
+  content: "\2197";
+  color: #7B61FF;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Citation finale — gradient texte ────────────────────── */
+
+.problem-quote {
+  max-width: 700px;
+  margin: 48px auto 0;
+  text-align: center;
+  padding: 20px 24px;
+  border-left: 4px solid #47FFEE;
+  background: rgba(71, 255, 238, 0.04);
+  border-radius: 8px;
+}
+
+.problem-quote p {
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.7;
+  background: linear-gradient(to right, #00D4FF 0%, #7B61FF 45%, #E91E8C 75%, #FF1493 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Encadré solution ─────────────────────────────────────── */
+
+.probleme__solution {
+  text-align: center;
+  padding: 48px;
+  background: rgba(71, 255, 238, 0.04);
+  border: 1px solid rgba(71, 255, 238, 0.15);
+  border-radius: var(--border-radius-card);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.probleme__solution-text {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.probleme__solution-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ── Animations reveal ────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--delay-1 { transition-delay: 0.1s; }
+.reveal--delay-2 { transition-delay: 0.2s; }
+.reveal--delay-3 { transition-delay: 0.3s; }
+.reveal--delay-4 { transition-delay: 0.4s; }
+.reveal--delay-5 { transition-delay: 0.5s; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .probleme__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .problem-blocks {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  /* Mobile : pas d'animation, blocs visibles directement */
+  .problem-card,
+  .problem-card:nth-child(2),
+  .problem-card:nth-child(3) {
+    opacity: 1;
+    transform: none;
+    transition: box-shadow 0.38s ease;
+  }
+  .problem-card.pb-visible {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .probleme__grid {
+    grid-template-columns: 1fr;
+  }
+  .problem-blocks {
+    padding: 0 16px;
+    gap: 16px;
+  }
+  .problem-card {
+    padding: 24px 20px;
+  }
+  .problem-card__title {
+    font-size: 16px;
+  }
+  .problem-card__list li {
+    font-size: 13px;
+  }
+
+  .probleme__solution {
+    padding: 32px 24px;
+  }
+}

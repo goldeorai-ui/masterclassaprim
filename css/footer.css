@@ -1,0 +1,220 @@
+/* ============================================================
+   GOLDEOR — Footer
+   footer.css
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 60px 0 32px;
+  position: relative;
+  overflow: hidden;
+
+  /* Image de fond — forêt sombre */
+  background-image: url('../assets/images/image footer background plante.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* Overlay sombre pour garder le texte lisible */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.60) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Watermark géant en fond */
+.footer__watermark {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(80px, 15vw, 160px);
+  font-weight: 900;
+  color: rgba(255,255,255,0.02);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: -4px;
+}
+
+.footer__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Layout principal */
+.footer__main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+/* Colonne brand */
+.footer__brand {}
+
+.footer__logo {
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.footer__tagline {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 280px;
+  margin-bottom: 24px;
+}
+
+/* Social links */
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer__social-btn:hover {
+  background: var(--btn-gradient);
+  border-color: transparent;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer__social-btn--instagram:hover {
+  background: linear-gradient(135deg, #f97316, #ec4899, #a855f7);
+  border-color: transparent;
+  color: white;
+}
+
+.footer__social-btn--linkedin:hover {
+  background: #0077B5;
+  border-color: transparent;
+  color: white;
+}
+
+/* Colonnes nav */
+.footer__nav-col {}
+
+.footer__nav-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__nav-link {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.footer__legal-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__legal-link {
+  font-size: 12px;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer__legal-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* Compteur live */
+.footer__live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer__live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Disclaimer */
+.footer__disclaimer {
+  margin-top: 20px;
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer__main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__legal-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

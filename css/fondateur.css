@@ -1,0 +1,372 @@
+/* ============================================================
+   GOLDEOR — Section Fondateur
+   fondateur.css
+   Section "Qui suis-je ?" — Boris Cédric Pedjiobah
+   ============================================================ */
+
+.fondateur {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Layout 2 colonnes */
+.fondateur__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Colonne image */
+.fondateur__visual {
+  position: relative;
+}
+
+.fondateur__photo-wrapper {
+  position: relative;
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  min-height: 540px;
+}
+
+.fondateur__photo {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--border-radius-card);
+  display: block;
+}
+
+/* Placeholder si pas de photo */
+.fondateur__photo-placeholder {
+  width: 100%;
+  height: 480px;
+  background: linear-gradient(135deg, #350f7c 0%, #6b5497 50%, #c285ff 100%);
+  border-radius: var(--border-radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+
+/* Badge flottant — position par défaut (bas) */
+.fondateur__badge {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.70);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 20px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+/* Bordure argentée shiny sur le badge */
+.fondateur__badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.70)  0%,
+    rgba(200, 200, 230, 0.25) 25%,
+    rgba(120, 120, 160, 0.08) 50%,
+    rgba(200, 200, 230, 0.20) 75%,
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Badge en haut, superposé dans le bloc photo */
+.fondateur__badge--top {
+  top: 16px;
+  bottom: auto;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.07);
+  animation: badgeSubtle 4s ease-in-out infinite;
+}
+
+@keyframes badgeSubtle {
+  0%, 100% { box-shadow: 0 0 12px rgba(255, 255, 255, 0.03); }
+  50%      { box-shadow: 0 0 18px rgba(255, 255, 255, 0.07); }
+}
+
+/* ── Barre de stats glassmorphique — superposée en bas du bloc photo ── */
+
+.fondateur__stats-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: stretch;
+  border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 3;
+}
+
+/* Bordure argentée shiny — style logos__card */
+.fondateur__stats-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.70)  0%,
+    rgba(200, 200, 230, 0.25) 25%,
+    rgba(120, 120, 160, 0.08) 50%,
+    rgba(200, 200, 230, 0.20) 75%,
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.fondateur__stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 12px;
+  text-align: center;
+  gap: 4px;
+}
+
+.fondateur__stat-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.fondateur__stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.fondateur__stat-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  align-self: stretch;
+}
+
+.fondateur__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.fondateur__badge-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Colonne contenu */
+.fondateur__content {}
+
+.fondateur__name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.fondateur__title {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  background: var(--heading-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fondateur__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.fondateur__bio p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.fondateur__bio strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Métriques clés */
+.fondateur__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.fondateur__metric {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  border-radius: var(--border-radius-sm);
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+    0 6px 28px rgba(0, 0, 0, 0.40);
+}
+
+/* Bordure argentée shiny — style logos__card */
+.fondateur__metric::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.70)  0%,
+    rgba(200, 200, 230, 0.25) 25%,
+    rgba(120, 120, 160, 0.08) 50%,
+    rgba(200, 200, 230, 0.20) 75%,
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.fondateur__metric::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0.55) 70%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.fondateur__metric-value {
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.fondateur__metric-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Logos clients */
+.fondateur__clients {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fondateur__clients-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  display: block;
+  width: 100%;
+}
+
+.fondateur__client-logo {
+  height: 28px;
+  opacity: 0.45;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.fondateur__client-logo:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .fondateur__layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fondateur__metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .fondateur__metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fondateur__stats-bar {
+    flex-direction: column;
+  }
+
+  .fondateur__stat-divider {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    align-self: auto;
+  }
+}

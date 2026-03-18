@@ -1,0 +1,288 @@
+/* ============================================================
+   GOLDEOR — Global Styles
+   styles.css
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES CSS
+   ============================================================ */
+
+:root {
+  /* Couleurs principales */
+  --bg-page: #000000;
+  --accent-cyan: #47FFEE;
+  --accent-purple-light: #c285ff;
+  --accent-purple-mid: #6b5497;
+  --accent-purple-dark: #350f7c;
+  --gold: #C9A84C;
+  --heading-silver: linear-gradient(to right, #FFFFFF, #C4C4C4, #EFEFEF);
+
+  /* Texte */
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-muted: #AAAAAA;
+  --text-dim: #666666;
+
+  /* Glassmorphisme */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+
+  /* Bouton */
+  --btn-gradient: linear-gradient(to right, #DDD6FE, #FAF5FF, #FFFFFF, #F0FDFA, #CCFBF1);
+  --btn-radius: 14px;
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-width: 1100px;
+  --border-radius-card: 24px;
+  --border-radius-sm: 16px;
+}
+
+/* ============================================================
+   RESET CSS
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ============================================================
+   CLASSES UTILITAIRES GLOBALES
+   ============================================================ */
+
+/* Container centré */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Gradient texte standard */
+.text-gradient {
+  background: var(--heading-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Texte accent cyan */
+.text-accent {
+  color: var(--accent-cyan);
+}
+
+/* Glassmorphisme standard */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+}
+
+/* Bouton standard — gradient pastel, hover lift + glow */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--btn-gradient);
+  border-radius: var(--btn-radius);
+  padding: 14px 36px;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  border: none;
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 2px 12px rgba(180, 120, 240, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 8px 32px rgba(167, 139, 250, 0.45),
+    0 4px 20px rgba(94, 234, 212, 0.35);
+}
+
+.btn-primary .btn-arrow {
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Bouton ghost (pill glassmorphique) */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--btn-radius);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-ghost:hover {
+  background: var(--btn-gradient);
+  border-color: transparent;
+  box-shadow: var(--btn-shadow);
+}
+
+/* Section padding */
+.section {
+  padding: var(--section-padding);
+}
+
+
+/* Séparateur doré */
+.divider-gold {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 24px auto;
+}
+
+/* Badge pill — section label style hero */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50px;
+  padding: 9px 22px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Carte glassmorphique standard */
+.card-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-card);
+  padding: 40px;
+}
+
+/* Encadré avant/après (bonus) */
+.before-after {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-cyan);
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* Icône cercle (modules) */
+.icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-circle:hover {
+  background: rgba(71, 255, 238, 0.15);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(71, 255, 238, 0.4);
+}
+
+.icon-circle:hover svg,
+.icon-circle:hover i {
+  color: var(--accent-cyan);
+}
+
+/* ============================================================
+   RESPONSIVE — BREAKPOINTS
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px 0;
+    --container-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 12px 28px;
+  }
+}

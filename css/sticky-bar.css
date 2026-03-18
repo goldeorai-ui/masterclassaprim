@@ -1,0 +1,134 @@
+/* ============================================================
+   GOLDEOR — Sticky Bar
+   sticky-bar.css
+   ============================================================ */
+
+.sticky-bar {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  z-index: 1000;
+  height: 52px;
+  border-radius: 999px;
+  overflow: visible;
+
+  /* Glassmorphisme */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease,
+    border 0.3s ease;
+}
+
+.sticky-bar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sticky-bar__text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sticky-bar__intro {
+  background: linear-gradient(to right, #FFFFFF, #CCCCCC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+
+.sticky-bar__date {
+  color: #47FFEE;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Bouton CTA — pill gradient inspiré screenshot */
+.sticky-bar__cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--btn-gradient);
+  border-radius: 14px !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+  padding: 8px 22px !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 2px 12px rgba(180, 120, 240, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky-bar__cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 6px 24px rgba(167, 139, 250, 0.45),
+    0 3px 16px rgba(94, 234, 212, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sticky-bar {
+    height: auto;
+    top: 10px;
+    width: 92%;
+    padding: 8px 0;
+  }
+
+  .sticky-bar__inner {
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 16px;
+    height: auto;
+  }
+
+  .sticky-bar__text {
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .sticky-bar__intro {
+    font-size: 10px;
+  }
+
+  .sticky-bar__date {
+    font-size: 10px;
+  }
+
+  .sticky-bar__cta {
+    font-size: 10px !important;
+    padding: 10px 14px !important;
+    width: 80%;
+  }
+}

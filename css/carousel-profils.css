@@ -1,0 +1,226 @@
+/* ============================================================
+   GOLDEOR — Carousel Profils
+   carousel-profils.css
+   Section "Pour qui ?" avec carousel de profils cibles
+   ============================================================ */
+
+.profils {
+  position: relative;
+  overflow: hidden;
+}
+
+.profils__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.profils__title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  background: var(--heading-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profils__subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Carousel */
+.profils__carousel {
+  position: relative;
+}
+
+.profils__track-wrapper {
+  overflow: hidden;
+  cursor: grab;
+  padding-top: 20px;
+  margin-top: -20px;
+}
+
+.profils__track-wrapper:active {
+  cursor: grabbing;
+}
+
+.profils__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+/* Carte profil */
+.profils__card {
+  flex-shrink: 0;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-card);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bordure dégradée argentée — plus lumineuse au hover */
+.profils__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18) 0%,
+    rgba(200,200,220,0.05) 40%,
+    rgba(100,100,140,0.02) 60%,
+    rgba(255,255,255,0.14) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+
+.profils__card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 8px 32px rgba(0,0,0,0.45);
+}
+
+.profils__card:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.75) 0%,
+    rgba(210,210,235,0.25) 30%,
+    rgba(140,140,180,0.08) 55%,
+    rgba(255,255,255,0.65) 100%
+  );
+}
+
+.profils__card-emoji {
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  /* Glass */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.13),
+    0 2px 14px rgba(0,0,0,0.28);
+}
+
+/* Bordure shiny argentée autour du petit carré */
+.profils__card-emoji::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.60) 0%,
+    rgba(190,190,220,0.18) 30%,
+    rgba(100,100,150,0.06) 55%,
+    rgba(255,255,255,0.52) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.profils__card-title {
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--heading-silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.profils__card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Navigation */
+.profils__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.profils__nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text-primary);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profils__nav-btn:hover {
+  background: rgba(71,255,238,0.15);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.profils__dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.profils__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profils__dot.is-active {
+  background: var(--accent-cyan);
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .profils__card {
+    width: calc(100vw - 80px);
+  }
+}

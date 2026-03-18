@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>MasterClass Goldeor — De 0 à tes Premiers Revenus Digitaux | 3 & 4 Avril 2026</title>
+  <meta name="description" content="La MasterClass qui t'apprend à générer tes premiers revenus en ligne. Stratégies concrètes, terrain réel, résultats mesurables. 3 & 4 Avril 2026." />
+
+  <!-- OG -->
+  <meta property="og:title" content="MasterClass Goldeor — Tes Premiers Revenus Digitaux" />
+  <meta property="og:description" content="2 soirées pour enfin savoir comment ton business digital peut générer des revenus réels." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/sticky-bar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/logos.css" />
+  <link rel="stylesheet" href="css/probleme.css" />
+  <link rel="stylesheet" href="css/programme.css" />
+  <link rel="stylesheet" href="css/bonus.css" />
+  <link rel="stylesheet" href="css/carousel-profils.css" />
+  <link rel="stylesheet" href="css/avantages.css" />
+  <link rel="stylesheet" href="css/fondateur.css" />
+  <link rel="stylesheet" href="css/temoignages.css" />
+  <link rel="stylesheet" href="css/cta-final.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Style spécifique Variant B : Hero différent -->
+  <style>
+    /* Hero variant B — angle "résultat concret" */
+    .hero__title .line-highlight {
+      display: block;
+      font-size: clamp(40px, 7vw, 88px);
+      background: linear-gradient(to right, var(--gold), #f0d080);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .hero__social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero__avatars {
+      display: flex;
+    }
+
+    .hero__avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--bg-page);
+      background: linear-gradient(135deg, var(--accent-purple-dark), var(--accent-purple-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      margin-left: -10px;
+    }
+
+    .hero__avatar:first-child { margin-left: 0; }
+
+    .hero__social-proof-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero__social-proof-text strong {
+      color: var(--text-primary);
+    }
+
+    /* Waitlist style */
+    .hero__waitlist {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero__waitlist-input {
+      flex: 1;
+      min-width: 220px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--btn-radius);
+      padding: 14px 20px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .hero__waitlist-input::placeholder {
+      color: var(--text-dim);
+    }
+
+    .hero__waitlist-input:focus {
+      border-color: rgba(71,255,238,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar__inner">
+      <p class="sticky-bar__text">
+        <span class="sticky-bar__intro">On vous invite à une MasterClass en ligne EXCLUSIVE :</span>
+        <span class="sticky-bar__date">3 &amp; 4 AVRIL 2026 &bull; 20H00</span>
+      </p>
+      <button class="sticky-bar__cta"
+              onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+        JE M'INSCRIS →
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO — Variant B -->
+  <section class="hero" id="hero">
+
+    <!-- Vidéo de fond en boucle -->
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="assets/images/Video hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero__video-overlay"></div>
+
+    <div class="hero__blobs">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__blob hero__blob--3"></div>
+    </div>
+
+    <div class="hero__inner">
+
+      <!-- Badge callout glassmorphique -->
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Pour les créateurs de contenu, influenceurs et entrepreneurs sur le territoire africain qui veulent utiliser l'IA pour créer plus vite, toucher plus loin et monétiser — sans jamais se montrer à l'écran. (Adapté également à toute personne qui désire se lancer de zéro.)
+      </div>
+
+      <!-- H1 -->
+      <h1 class="hero__title">
+        En moins de <span class="text-accent">10 jours</span> avec les bons outils IA, un compte TikTok peut passer de zéro à <span class="text-accent">monétisable</span> — prêt pour <span class="text-accent">TikTok Shop</span>, les <span class="text-accent">partenariats de marque</span>, et les <span class="text-accent">revenus en continu</span>.
+      </h1>
+
+      <!-- H2 subtitle -->
+      <p class="hero__subtitle">
+        La masterclass qui vous donne le <span class="text-accent">système complet</span> pour créer des <span class="text-accent">avatars viraux</span>, exploser vos statistiques et accéder à la <span class="text-accent">monétisation</span> — sans montrer votre visage.
+      </p>
+
+      <!-- Lead-in -->
+      <p class="hero__leadin">
+        Une masterclass live de 2 soirées — les 3 et 4 avril 2026 — pour les créateurs qui veulent arrêter de produire dans le vide et commencer à construire une présence IA qui grossit, qui engage, et qui ouvre les portes des revenus réels : partenariats, TikTok Shop, produits digitaux, affiliation. Tout ça sans équipe, sans studio, depuis votre téléphone.
+      </p>
+
+      <!-- CTA principal -->
+      <button class="hero__cta-btn"
+              onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+        Je réserve ma place →
+      </button>
+
+      <!-- Micro-texte -->
+      <p class="hero__micro">5 bonus exclusifs offerts dès votre inscription</p>
+
+      <!-- Stats -->
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="hero__stat-number">2</div>
+          <div class="hero__stat-label">Soirées intenses</div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">6+</div>
+          <div class="hero__stat-label">Bonus offerts</div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">49€</div>
+          <div class="hero__stat-label">Tout inclus</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll"
+         onclick="document.querySelector('.logos').scrollIntoView({behavior:'smooth'})">
+      <div class="hero__scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="logos">
+    <div class="logos__track-wrapper">
+      <div class="logos__track">
+        <!-- Série 1 -->
+        <div class="logos__card"><img src="assets/images/logos/animalperdu.png" alt="Animal Perdu Assistance" /></div>
+        <div class="logos__card"><img src="assets/images/logos/owner.png" alt="Owner Technology" /></div>
+        <div class="logos__card"><img src="assets/images/logos/complement.png" alt="Complement Education" /></div>
+        <div class="logos__card"><img src="assets/images/logos/heritières.png" alt="Les Héritières" /></div>
+        <div class="logos__card"><img src="assets/images/logos/sanitage.png" alt="Sanitage" /></div>
+        <div class="logos__card"><img src="assets/images/logos/arisgros.png" alt="Les Arisgros" /></div>
+        <div class="logos__card"><img src="assets/images/logos/moulin-dorgemont.png" alt="Le Moulin d'Orgement" /></div>
+        <div class="logos__card"><img src="assets/images/logos/rentisi.png" alt="Rentisi" /></div>
+        <div class="logos__card"><img src="assets/images/logos/retinea.png" alt="Retinea Centre Ophtalmologique" /></div>
+        <!-- Série 2 — dupliquée pour le scroll infini -->
+        <div class="logos__card"><img src="assets/images/logos/animalperdu.png" alt="Animal Perdu Assistance" /></div>
+        <div class="logos__card"><img src="assets/images/logos/owner.png" alt="Owner Technology" /></div>
+        <div class="logos__card"><img src="assets/images/logos/complement.png" alt="Complement Education" /></div>
+        <div class="logos__card"><img src="assets/images/logos/heritières.png" alt="Les Héritières" /></div>
+        <div class="logos__card"><img src="assets/images/logos/sanitage.png" alt="Sanitage" /></div>
+        <div class="logos__card"><img src="assets/images/logos/arisgros.png" alt="Les Arisgros" /></div>
+        <div class="logos__card"><img src="assets/images/logos/moulin-dorgemont.png" alt="Le Moulin d'Orgement" /></div>
+        <div class="logos__card"><img src="assets/images/logos/rentisi.png" alt="Rentisi" /></div>
+        <div class="logos__card"><img src="assets/images/logos/retinea.png" alt="Retinea Centre Ophtalmologique" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLÈME -->
+  <section class="probleme section" id="probleme">
+    <div class="container">
+      <div class="probleme__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Le constat</div>
+        <h2 class="probleme__title">
+          Vous créez. Vous postez. Et pourtant, rien ne décolle vraiment.
+        </h2>
+      </div>
+
+      <div class="problem-blocks">
+
+        <!-- BLOC 1 — Réalité -->
+        <div class="problem-card">
+          <div class="problem-card__icon problem-card__icon--red">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <h3 class="problem-card__title">Votre réalité aujourd'hui</h3>
+          <ul class="problem-card__list problem-card__list--negative">
+            <li>Vous créez, vous postez, ça disparaît</li>
+            <li>Les marques ne vous contactent pas</li>
+            <li>Quand elles le font, elles sous-paient</li>
+            <li>Votre contenu se noie dans le recyclé</li>
+            <li>Vous attendez des résultats qui ne viennent pas</li>
+          </ul>
+        </div>
+
+        <!-- BLOC 2 — Solution (carte centrale) -->
+        <div class="problem-card problem-card--active">
+          <div class="problem-card__icon problem-card__icon--cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4l3 12h14l3-12-5.5 6L12 2 7.5 10 2 4z"/><path d="M5 16l-2 6h18l-2-6"/>
+            </svg>
+          </div>
+          <h3 class="problem-card__title">Avec la Masterclass Goldeor</h3>
+          <ul class="problem-card__list problem-card__list--positive">
+            <li>Un système qui produit à votre place</li>
+            <li>Des outils que 99% des créateurs africains ignorent</li>
+            <li>Un avatar IA qui travaille 24h/24 sans vous</li>
+            <li>Du contenu viral reproductible à l'infini</li>
+            <li>La méthode exacte pour accéder aux partenariats</li>
+          </ul>
+        </div>
+
+        <!-- BLOC 3 — Résultats -->
+        <div class="problem-card">
+          <div class="problem-card__icon problem-card__icon--purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </div>
+          <h3 class="problem-card__title">Les résultats</h3>
+          <ul class="problem-card__list problem-card__list--results">
+            <li>De zéro à monétisable en moins de 10 jours</li>
+            <li>Un contenu que les marques remarquent enfin</li>
+            <li>Une maîtrise réelle, pas un raccourci</li>
+            <li>Une avance que vos concurrents ne pourront pas racheter</li>
+            <li>Vous dans le train — pas sur le quai</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Phrase finale -->
+      <div class="problem-quote">
+        <p>La nouvelle ruée vers l'or a commencé. La question n'est pas de savoir si vous allez y participer — c'est de savoir si vous allez arriver à temps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section class="programme section" id="programme">
+    <div class="container">
+      <div class="programme__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Le programme</div>
+        <h2 class="programme__title">Nous vous donnerons les clés de l'intelligence artificielle pour que vous ayez un avantage presque injuste par rapport à votre concurrence.</h2>
+      </div>
+
+      <div class="programme__sessions">
+
+        <!-- ── Soirée 1 ── -->
+        <div class="prog-card prog-card--1 reveal">
+          <div class="prog-card__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12,2 22,8.5 12,15 2,8.5"/>
+              <polyline points="2,12 12,18.5 22,12" opacity="0.65"/>
+              <polyline points="2,15.5 12,22 22,15.5" opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="prog-card__meta">Soirée 1</div>
+          <div class="prog-card__day">Vendredi 3 Avril 2026 • 20H00</div>
+          <div class="prog-card__divider"><span>Au programme</span></div>
+          <ul class="prog-card__modules">
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 01</strong> — Le kit de marque complet qui fait que vos clients vous reconnaissent, vous font confiance et vous choisissent — avant même d'avoir lu une seule ligne de votre offre</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 02</strong> — Votre site professionnel conçu en moins de temps qu'il n'en faut à un designer à qui vous paieriez des centaines de milliers de FCFA pour un site qui prend trois mois à livrer</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 03</strong> — La méthode publicitaire Meta adaptée au budget et à la maturité de votre entreprise — et les visuels IA illimités qui font cliquer exactement votre cible</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 04</strong> — Faites la promotion de votre marque, de vos produits physiques ou digitaux avec des influenceurs IA au rendu ultra-réaliste — sans acteurs, sans tournage, sans studio. Juste une connexion internet.</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 05</strong> — Les mots exacts qui déclenchent l'achat — le copywriting qui touche votre client au point précis où il ne peut plus dire non</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 06</strong> — La recette LinkedIn pour passer de profil invisible à référence reconnue dans votre secteur — avec les stratégies de publication qui fonctionnent sur le territoire africain</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 07</strong> — L'art du carrousel viral qui force le swipe, génère des partages, et transforme chaque post en machine d'acquisition gratuite</span>
+            </li>
+          </ul>
+          <button class="prog-card__cta"
+                  onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+            Je m'inscris →
+          </button>
+        </div>
+
+        <!-- ── Soirée 2 ── -->
+        <div class="prog-card prog-card--2 reveal reveal--delay-2">
+          <div class="prog-card__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3,17 8,11 13,14 21,4"/>
+              <polyline points="17,4 21,4 21,8"/>
+            </svg>
+          </div>
+          <div class="prog-card__meta">Soirée 2</div>
+          <div class="prog-card__day">Samedi 4 Avril 2026 • 20H00</div>
+          <div class="prog-card__divider"><span>Au programme</span></div>
+          <ul class="prog-card__modules">
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 08</strong> — Les niches sur les réseaux sociaux qui permettent de croître et d'accéder à la monétisation le plus rapidement — sans jamais montrer son visage</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 09</strong> — Créez et lancez votre avatar IA : votre clone digital qui produit du contenu, représente votre marque et travaille 24h/24 — sans vous</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 10</strong> — Profitez du courant de viralité qu'apporte la création de contenu IA pour lancer votre présence TikTok et atteindre vos premiers milliers d'abonnés</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 11</strong> — Vos propres mini-films de marque cinématographiques — produits avec l'IA, sans caméra, sans équipe, sans budget de production</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 12</strong> — Les bases de montage qui vous permettront d'éditer rapidement vos vidéos vous-même — sans recourir à un monteur professionnel</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 13</strong> — Créez votre produit digital pour commercialiser votre expertise et générer des revenus auprès des personnes prêtes à payer pour ce que vous savez faire</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 14</strong> — Apprenez à maîtriser Google Veo, le premier outil de génération de vidéo IA au monde</span>
+            </li>
+            <li class="prog-card__module">
+              <span class="prog-card__check">✓</span>
+              <span><strong>MODULE 15</strong> — Apprenez à maîtriser Google Nano Banana, le premier outil de génération d'image au monde</span>
+            </li>
+          </ul>
+          <button class="prog-card__cta"
+                  onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+            Je m'inscris →
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="bonus section" id="bonus">
+    <div class="container">
+      <div class="bonus__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Les bonus</div>
+        <h2 class="bonus__title">En plus de la masterclass, vous recevez gratuitement :</h2>
+      </div>
+
+      <div class="bonus__grid">
+        <div class="bonus__card reveal reveal--delay-1">
+          <span class="bonus__badge">OFFERT</span>
+          <div class="bonus__card-orb">
+            <div class="bonus__card-ring bonus__card-ring--2"></div>
+            <div class="bonus__card-ring bonus__card-ring--1"></div>
+            <div class="bonus__card-icon-wrap">
+              <span class="bonus__card-icon">📋</span>
+            </div>
+          </div>
+          <span class="bonus__card-value">Valeur : 300 EUR</span>
+          <h3 class="bonus__card-title">+100 Templates Canva prêts à l'emploi pour votre marque (posts, stories, carrousels, bannières LinkedIn, affiches)</h3>
+          <div class="bonus__card-time">
+            <span class="bonus__card-time-before">Avant : <strong>6 mois</strong></span>
+            <span class="bonus__card-time-today">Aujourd'hui : <strong>1 journée</strong></span>
+          </div>
+        </div>
+        <div class="bonus__card reveal reveal--delay-2">
+          <span class="bonus__badge">OFFERT</span>
+          <div class="bonus__card-orb">
+            <div class="bonus__card-ring bonus__card-ring--2"></div>
+            <div class="bonus__card-ring bonus__card-ring--1"></div>
+            <div class="bonus__card-icon-wrap">
+              <span class="bonus__card-icon">📸</span>
+            </div>
+          </div>
+          <span class="bonus__card-value">Valeur : 5 000 EUR</span>
+          <h3 class="bonus__card-title">Séquence complète de prompts pour réaliser vos shootings virtuels, lookbooks et visuels de marque — sans photographe, sans lieu de shooting coûteux, sans influenceur, sans équipements professionnels</h3>
+          <div class="bonus__card-time">
+            <span class="bonus__card-time-before">Avant : <strong>3 à 5 ans</strong></span>
+            <span class="bonus__card-time-today">Aujourd'hui : <strong>1 semaine</strong></span>
+          </div>
+        </div>
+        <div class="bonus__card reveal reveal--delay-3">
+          <span class="bonus__badge">OFFERT</span>
+          <div class="bonus__card-orb">
+            <div class="bonus__card-ring bonus__card-ring--2"></div>
+            <div class="bonus__card-ring bonus__card-ring--1"></div>
+            <div class="bonus__card-icon-wrap">
+              <span class="bonus__card-icon">📖</span>
+            </div>
+          </div>
+          <span class="bonus__card-value">Valeur : 300 EUR</span>
+          <h3 class="bonus__card-title">Le Guide des 1000 Accroches qui ont marché depuis 1900 — classées par secteur, émotion et plateforme, adaptées au marché africain francophone</h3>
+          <div class="bonus__card-time">
+            <span class="bonus__card-time-before">Avant : <strong>toute une vie</strong></span>
+            <span class="bonus__card-time-today">Aujourd'hui : <strong>immédiat</strong></span>
+          </div>
+        </div>
+        <div class="bonus__card reveal reveal--delay-4">
+          <span class="bonus__badge">OFFERT</span>
+          <div class="bonus__card-orb">
+            <div class="bonus__card-ring bonus__card-ring--2"></div>
+            <div class="bonus__card-ring bonus__card-ring--1"></div>
+            <div class="bonus__card-icon-wrap">
+              <span class="bonus__card-icon">🔥</span>
+            </div>
+          </div>
+          <span class="bonus__card-value">Valeur : 7 000 EUR</span>
+          <h3 class="bonus__card-title">Arsenal Complet de Prompts pour créer des histoires virales sur les réseaux sociaux</h3>
+          <div class="bonus__card-time">
+            <span class="bonus__card-time-before">Avant : <strong>7 ans</strong></span>
+            <span class="bonus__card-time-today">Aujourd'hui : <strong>4 heures</strong></span>
+          </div>
+        </div>
+        <div class="bonus__card reveal reveal--delay-5">
+          <span class="bonus__badge">OFFERT</span>
+          <div class="bonus__card-orb">
+            <div class="bonus__card-ring bonus__card-ring--2"></div>
+            <div class="bonus__card-ring bonus__card-ring--1"></div>
+            <div class="bonus__card-icon-wrap">
+              <span class="bonus__card-icon">🏆</span>
+            </div>
+          </div>
+          <span class="bonus__card-value">Valeur : 199 EUR</span>
+          <h3 class="bonus__card-title">Accès à la communauté privée Skool avec réduction de 50% sur le prix de la formation + Certificat IA User All World délivré à la fin</h3>
+        </div>
+        <div class="bonus__card reveal reveal--delay-1">
+          <span class="bonus__badge">OFFERT</span>
+          <div class="bonus__card-orb">
+            <div class="bonus__card-ring bonus__card-ring--2"></div>
+            <div class="bonus__card-ring bonus__card-ring--1"></div>
+            <div class="bonus__card-icon-wrap">
+              <span class="bonus__card-icon">🎬</span>
+            </div>
+          </div>
+          <span class="bonus__card-value">Valeur : 3 000 EUR</span>
+          <h3 class="bonus__card-title">Accès aux replays des 2 soirées — revoyez chaque module autant de fois que nécessaire pour maîtriser chaque outil à votre rythme</h3>
+          <div class="bonus__card-time">
+            <span class="bonus__card-time-before">Avant : <strong>impossible</strong></span>
+            <span class="bonus__card-time-today">Aujourd'hui : <strong>illimité</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bonus__total reveal">
+
+        <!-- Zone visuelle : dual aurora + grille dots + cadres imbriqués + coffre -->
+        <div class="bonus__total-visual">
+          <div class="bonus__total-dots bonus__total-dots--l"></div>
+          <div class="bonus__total-dots bonus__total-dots--r"></div>
+          <div class="btf btf-4">
+            <div class="btf btf-3">
+              <div class="btf btf-2">
+                <div class="btf btf-1">
+                  <div class="bonus__total-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Ombre au sol -->
+                      <ellipse cx="32" cy="62" rx="20" ry="3" fill="rgba(0,0,0,0.4)"/>
+                      <!-- Corps du coffre -->
+                      <rect x="7" y="30" width="50" height="27" rx="3" fill="#6B3A1F"/>
+                      <rect x="7" y="30" width="50" height="6" fill="#7C4523"/>
+                      <!-- Couvercle bombé -->
+                      <path d="M7 30 C7 18 13 13 32 13 C51 13 57 18 57 30 Z" fill="#7A4422"/>
+                      <path d="M11 29 C11 20 16 16 32 16 C48 16 53 20 53 29 Z" fill="#956035"/>
+                      <!-- Bande métal couvercle -->
+                      <path d="M9 27 Q9 20 32 18 Q55 20 55 27" stroke="#C9A84C" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                      <!-- Bandes métal corps -->
+                      <rect x="7" y="37" width="50" height="3.5" rx="1" fill="#C9A84C"/>
+                      <rect x="7" y="48" width="50" height="3.5" rx="1" fill="#C9A84C"/>
+                      <!-- Rivets -->
+                      <circle cx="13" cy="38.75" r="2" fill="#E8C76A"/>
+                      <circle cx="51" cy="38.75" r="2" fill="#E8C76A"/>
+                      <circle cx="13" cy="49.75" r="2" fill="#E8C76A"/>
+                      <circle cx="51" cy="49.75" r="2" fill="#E8C76A"/>
+                      <!-- Serrure centrale -->
+                      <rect x="26" y="27" width="12" height="9" rx="2" fill="#C9A84C"/>
+                      <rect x="28" y="29" width="8" height="6" rx="1.5" fill="#6B3A1F"/>
+                      <circle cx="32" cy="32" r="1.8" fill="#3A1F08"/>
+                      <rect x="31.1" y="33" width="1.8" height="2" rx="0.5" fill="#3A1F08"/>
+                      <!-- Veines bois -->
+                      <line x1="18" y1="33" x2="18" y2="57" stroke="rgba(0,0,0,0.10)" stroke-width="1"/>
+                      <line x1="32" y1="33" x2="32" y2="57" stroke="rgba(0,0,0,0.10)" stroke-width="1"/>
+                      <line x1="46" y1="33" x2="46" y2="57" stroke="rgba(0,0,0,0.10)" stroke-width="1"/>
+                      <!-- Chaîne gauche -->
+                      <path d="M7 39 Q0 39 0 44 Q0 49 7 49" stroke="#999" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                      <ellipse cx="1" cy="41" rx="1.8" ry="2.4" stroke="#BBB" stroke-width="1.5" fill="rgba(0,0,0,0.2)" transform="rotate(-20 1 41)"/>
+                      <ellipse cx="1" cy="47" rx="1.8" ry="2.4" stroke="#BBB" stroke-width="1.5" fill="rgba(0,0,0,0.2)" transform="rotate(20 1 47)"/>
+                      <!-- Chaîne droite -->
+                      <path d="M57 39 Q64 39 64 44 Q64 49 57 49" stroke="#999" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                      <ellipse cx="63" cy="41" rx="1.8" ry="2.4" stroke="#BBB" stroke-width="1.5" fill="rgba(0,0,0,0.2)" transform="rotate(20 63 41)"/>
+                      <ellipse cx="63" cy="47" rx="1.8" ry="2.4" stroke="#BBB" stroke-width="1.5" fill="rgba(0,0,0,0.2)" transform="rotate(-20 63 47)"/>
+                      <!-- Ornements coins couvercle -->
+                      <circle cx="11" cy="16" r="2.5" fill="#C9A84C" opacity="0.9"/>
+                      <circle cx="53" cy="16" r="2.5" fill="#C9A84C" opacity="0.9"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="bonus__total-label">Valeur totale des bonus :</p>
+        <p class="bonus__total-value"><span data-count-accel="12799" data-suffix=" EUR" data-duration="3000">0 EUR</span></p>
+        <p class="bonus__total-note">Vous obtenez le tout gratuitement à 0 €</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILS -->
+  <section class="profils section" id="profils">
+    <div class="container">
+      <div class="profils__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Pour qui ?</div>
+      </div>
+
+      <div class="profils__carousel">
+        <div class="profils__track-wrapper">
+          <div class="profils__track">
+            <div class="profils__card"><div class="profils__card-emoji">🎵</div><h3 class="profils__card-title">Musicien / Artiste</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🎨</div><h3 class="profils__card-title">Artiste visuel / Illustrateur</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">👗</div><h3 class="profils__card-title">Propriétaire de marque vestimentaire</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🍽️</div><h3 class="profils__card-title">Restaurateur / Food creator</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">💄</div><h3 class="profils__card-title">Maquilleuse / Beauty creator</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">📦</div><h3 class="profils__card-title">E-commerçant</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">✂️</div><h3 class="profils__card-title">Coiffeur / Barbier</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">📸</div><h3 class="profils__card-title">Photographe</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🎬</div><h3 class="profils__card-title">Vidéaste</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🧘</div><h3 class="profils__card-title">Coach bien-être / Fitness</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🌺</div><h3 class="profils__card-title">Créateur lifestyle africain</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">📚</div><h3 class="profils__card-title">Auteur / Écrivain</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🎮</div><h3 class="profils__card-title">Gamer / Streamer</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">✈️</div><h3 class="profils__card-title">Travel creator / Nomade digital</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🍫</div><h3 class="profils__card-title">Artisan / Créateur de produits locaux</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🏋️</div><h3 class="profils__card-title">Coach sportif</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🎤</div><h3 class="profils__card-title">Humoriste / Créateur de sketchs</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">💅</div><h3 class="profils__card-title">Esthéticienne / Nail artist</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">🌍</div><h3 class="profils__card-title">Membre de la diaspora africaine</h3></div>
+            <div class="profils__card"><div class="profils__card-emoji">💡</div><h3 class="profils__card-title">Toute personne qui désire se lancer de zéro</h3></div>
+          </div>
+        </div>
+        <nav class="profils__nav">
+          <button class="profils__nav-btn profils__nav-btn--prev" aria-label="Précédent">&#8592;</button>
+          <div class="profils__dots"></div>
+          <button class="profils__nav-btn profils__nav-btn--next" aria-label="Suivant">&#8594;</button>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section class="avantages section" id="avantages">
+    <div class="container">
+      <div class="avantages__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Ce que vous ne trouverez nulle part ailleurs</div>
+        <h2 class="avantages__title">Ce que vous ne trouverez nulle part ailleurs sur le territoire africain</h2>
+      </div>
+
+      <div class="avantages__layout">
+        <div class="avantages__list">
+          <div class="avantages__item avantages__item--blue reveal">
+            <div class="avantages__item-icon">🚀</div>
+            <div class="avantages__item-content">
+              <h3 class="avantages__item-title">La viralité n'est plus une question de chance</h3>
+              <p class="avantages__item-desc">
+                Vous apprenez les mécaniques exactes de l'algorithme TikTok et les structures de contenu qui déclenchent la distribution massive — reproductibles, répétables, scalables.
+              </p>
+            </div>
+          </div>
+          <div class="avantages__item avantages__item--green reveal reveal--delay-1">
+            <div class="avantages__item-icon">💰</div>
+            <div class="avantages__item-content">
+              <h3 class="avantages__item-title">Monétisation accessible dès les premiers milliers d'abonnés</h3>
+              <p class="avantages__item-desc">
+                TikTok Shop, partenariats de marque, produits digitaux, affiliation — vous comprenez comment chaque palier d'audience se convertit en revenus concrets.
+              </p>
+            </div>
+          </div>
+          <div class="avantages__item avantages__item--orange reveal reveal--delay-2">
+            <div class="avantages__item-icon">🤖</div>
+            <div class="avantages__item-content">
+              <h3 class="avantages__item-title">Votre avatar travaille pendant que vous dormez</h3>
+              <p class="avantages__item-desc">
+                Il représente votre marque, produit le contenu le plus tendance, capture les formats les plus viraux — sans que vous ayez à apparaître à l'écran une seule fois.
+              </p>
+            </div>
+          </div>
+          <div class="avantages__item avantages__item--yellow reveal reveal--delay-3">
+            <div class="avantages__item-icon">🌍</div>
+            <div class="avantages__item-content">
+              <h3 class="avantages__item-title">Des méthodes internationales, adaptées à votre réalité</h3>
+              <p class="avantages__item-desc">
+                Des systèmes testés, traduits pour le contexte africain, avec les plateformes, les niches et les codes culturels qui fonctionnent ici.
+              </p>
+            </div>
+          </div>
+          <div class="avantages__item avantages__item--pink reveal reveal--delay-4">
+            <div class="avantages__item-icon">⏳</div>
+            <div class="avantages__item-content">
+              <h3 class="avantages__item-title">La fenêtre est encore ouverte — pas pour longtemps</h3>
+              <p class="avantages__item-desc">
+                Avant que le marché ne soit définitivement saturé, vous pouvez prendre une position que personne ne pourra vous racheter.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte résumé -->
+        <div class="avantages__card reveal">
+          <div class="avantages__card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#47FFEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="rgba(71,255,238,0.12)" stroke="#47FFEE"/>
+              <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+              <circle cx="12" cy="16" r="1.5" fill="#47FFEE"/>
+            </svg>
+          </div>
+          <h3 class="avantages__card-title">Ce que vous débloquez</h3>
+          <p class="avantages__card-subtitle">Une seule inscription, tout inclus</p>
+          <div class="avantages__card-price">
+            <span class="avantages__card-amount">49 €</span>
+          </div>
+          <p class="avantages__card-fcfa">≈ 32 000 FCFA</p>
+          <p class="avantages__card-price-note">Accès complet — paiement unique</p>
+          <div class="avantages__card-includes">
+            <div class="avantages__card-include">
+              <span class="avantages__card-include-icon">✓</span>
+              Session 1 — 3 Avril 2026 à 20h00
+            </div>
+            <div class="avantages__card-include">
+              <span class="avantages__card-include-icon">✓</span>
+              Session 2 — 4 Avril 2026 à 20h00
+            </div>
+            <div class="avantages__card-include">
+              <span class="avantages__card-include-icon">✓</span>
+              5 bonus exclusifs (valeur : 12 799 EUR)
+            </div>
+            <div class="avantages__card-include">
+              <span class="avantages__card-include-icon">✓</span>
+              Accès à la communauté privée Skool
+            </div>
+            <div class="avantages__card-include">
+              <span class="avantages__card-include-icon">✓</span>
+              Certificat IA User All World
+            </div>
+          </div>
+          <button class="btn-primary avantages__card-cta"
+                  onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+            Je m'inscris maintenant
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONDATEUR -->
+  <section class="fondateur section" id="fondateur">
+    <div class="container">
+      <div class="fondateur__layout">
+        <div class="fondateur__visual reveal">
+          <div class="fondateur__photo-wrapper">
+            <img src="assets/images/Photo professionnelle Boris.jpeg" alt="Boris Pedjiobah" class="fondateur__photo" />
+            <div class="fondateur__badge fondateur__badge--top">
+              <span class="fondateur__badge-dot"></span>
+              <span class="fondateur__badge-text">Directeur marketing et Growth IA Expert</span>
+            </div>
+            <div class="fondateur__stats-bar">
+              <div class="fondateur__stat-item">
+                <span class="fondateur__stat-value" data-count-accel="8" data-duration="3500">0</span>
+                <span class="fondateur__stat-label">ans d'expérience</span>
+              </div>
+              <div class="fondateur__stat-divider"></div>
+              <div class="fondateur__stat-item">
+                <span class="fondateur__stat-value" data-count-accel="17" data-suffix=" M €" data-decimal="true" data-duration="3000">0</span>
+                <span class="fondateur__stat-label">plus d'1,7 million généré</span>
+              </div>
+              <div class="fondateur__stat-divider"></div>
+              <div class="fondateur__stat-item">
+                <span class="fondateur__stat-value" data-count-accel="1360" data-duration="2500">0</span>
+                <span class="fondateur__stat-label">leads générés au cours des 30 derniers jours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fondateur__content reveal reveal--delay-2">
+          <div class="badge-pill"><span class="hero__badge-dot"></span>Qui suis-je &amp; qu'est-ce que Goldeor ?</div>
+          <h2 class="fondateur__title">Qui suis-je &amp; qu'est-ce que Goldeor ?</h2>
+          <p class="fondateur__name">Boris Pedjiobah</p>
+          <p class="fondateur__attribute">Expert en contenu digital &amp; acquisition de clients via les réseaux sociaux</p>
+
+          <div class="fondateur__bio">
+            <p>[À REMPLACER PAR BORIS]</p>
+          </div>
+
+          <div class="fondateur__metrics">
+            <div class="fondateur__metric">
+              <div class="fondateur__metric-value">250+</div>
+              <div class="fondateur__metric-label">Personnes formées</div>
+            </div>
+            <div class="fondateur__metric">
+              <div class="fondateur__metric-value">8+</div>
+              <div class="fondateur__metric-label">Marques accompagnées</div>
+            </div>
+            <div class="fondateur__metric">
+              <div class="fondateur__metric-value">4.9★</div>
+              <div class="fondateur__metric-label">Note participants</div>
+            </div>
+          </div>
+
+          <p class="fondateur__clients-label">Clients accompagnés :</p>
+          <div class="fondateur__clients">
+            <img src="assets/images/logos/animalperdu.png" alt="Animal Perdu" class="fondateur__client-logo" />
+            <img src="assets/images/logos/owner.png" alt="Owner" class="fondateur__client-logo" />
+            <img src="assets/images/logos/complement.png" alt="Complement" class="fondateur__client-logo" />
+            <img src="assets/images/logos/heritières.png" alt="Les Héritières" class="fondateur__client-logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="temoignages section" id="temoignages">
+    <div class="container">
+      <div class="temoignages__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Témoignages</div>
+        <h2 class="temoignages__title">Ce qu'ils disent de nous</h2>
+      </div>
+
+      <div class="temoignages__rating reveal">
+        <div class="temoignages__rating-score">4.9</div>
+        <div>
+          <div class="temoignages__rating-stars">★★★★★</div>
+          <div class="temoignages__rating-label">Note moyenne — 250+ participants</div>
+        </div>
+      </div>
+
+      <div class="temoignages__track-wrapper">
+        <div class="temoignages__track">
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "Le service est tout simplement exceptionnel ! Chaque détail est méticuleusement
+              pensé. Leur capacité à susciter mes émotions avant même la livraison finale du
+              site est incomparable — une atmosphère hyper conviviale. On se revoit très vite !"
+            </p>
+            <div class="temoignage-card__result">
+              <span class="temoignage-card__result-icon">✨</span>
+              Expérience au-delà de toutes les attentes
+            </div>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">H</div>
+              <div>
+                <div class="temoignage-card__name">HuztrielListman</div>
+                <div class="temoignage-card__role">Entrepreneur — E-commerce & Digital</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "Merci énormément Boris pour la qualité de ton travail. Le site tout juste créé
+              est ultra beau et brandé. Il dépasse mes attentes. Je te recommande à 100% et
+              espère continuer à travailler avec toi."
+            </p>
+            <div class="temoignage-card__result">
+              <span class="temoignage-card__result-icon">🎨</span>
+              Site ultra beau, brandé, au-delà des attentes
+            </div>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">G</div>
+              <div>
+                <div class="temoignage-card__name">Gilbert Terrada</div>
+                <div class="temoignage-card__role">Entrepreneur — E-commerce</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "J'ai rencontré Boris sur ComeUp en cherchant un produit winner. Il a fait
+              des recherches poussées et nous avons trouvé mon produit. Site web professionnel
+              sur mesure livré. Vous pouvez lui faire entièrement confiance."
+            </p>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">M</div>
+              <div>
+                <div class="temoignage-card__name">Maturin Feudjio</div>
+                <div class="temoignage-card__role">E-commerçant — Dropshipping</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "Très bon travail, il est réactif à toute demande et même après livraison
+              il est toujours disponible pour donner des conseils et aider dans
+              l'avancement du projet."
+            </p>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">S</div>
+              <div>
+                <div class="temoignage-card__name">Smithatout</div>
+                <div class="temoignage-card__role">Entrepreneur — Business digital</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "La patience est primordiale dans ce domaine et il a su me rassurer. Très bon
+              feeling, un résultat très professionnel. J'ai déjà hâte de travailler avec lui
+              sur mon deuxième projet !"
+            </p>
+            <div class="temoignage-card__result">
+              <span class="temoignage-card__result-icon">🤝</span>
+              Déjà sur le 2ème projet ensemble
+            </div>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">C</div>
+              <div>
+                <div class="temoignage-card__name">Compte privé</div>
+                <div class="temoignage-card__role">Entrepreneur — Boutique en ligne</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final section" id="cta-final">
+    <div class="container">
+      <div class="cta-final__inner">
+
+        <div class="badge-pill cta-final__urgency-pill">
+          <span class="hero__badge-dot"></span>
+          Dernière chance avant la fermeture des inscriptions
+        </div>
+
+        <h2 class="cta-final__title">
+          <span class="line-white">Dernière chance avant la fermeture des</span>
+          <span class="line-gradient">inscriptions</span>
+        </h2>
+
+        <div class="countdown">
+          <div class="countdown__item">
+            <span class="countdown__value" id="cd-weeks">00</span>
+            <span class="countdown__label">Semaines</span>
+          </div>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__item">
+            <span class="countdown__value" id="cd-days">00</span>
+            <span class="countdown__label">Jours</span>
+          </div>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__item">
+            <span class="countdown__value" id="cd-minutes">00</span>
+            <span class="countdown__label">Minutes</span>
+          </div>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__item">
+            <span class="countdown__value" id="cd-seconds">00</span>
+            <span class="countdown__label">Secondes</span>
+          </div>
+        </div>
+
+        <div class="cta-final__offer">
+          <div class="cta-final__offer-grid">
+            <div class="cta-final__offer-includes">
+              <div class="cta-final__offer-item">
+                <span class="cta-final__offer-item-icon">✓</span>
+                2 soirées de live interactif (3 &amp; 4 avril, 20h00)
+              </div>
+              <div class="cta-final__offer-item">
+                <span class="cta-final__offer-item-icon">✓</span>
+                Replays disponibles après chaque session
+              </div>
+              <div class="cta-final__offer-item">
+                <span class="cta-final__offer-item-icon">✓</span>
+                5 bonus exclusifs (valeur : 12 799 EUR)
+              </div>
+              <div class="cta-final__offer-item">
+                <span class="cta-final__offer-item-icon">✓</span>
+                Accès à une communauté privée au même mindset
+              </div>
+              <div class="cta-final__offer-item">
+                <span class="cta-final__offer-item-icon">✓</span>
+                Réduction de 50% sur la communauté Skool
+              </div>
+              <div class="cta-final__offer-item">
+                <span class="cta-final__offer-item-icon">✓</span>
+                Certificat IA User All World
+              </div>
+            </div>
+            <div class="cta-final__offer-divider"></div>
+            <div class="cta-final__offer-pricing">
+              <p class="cta-final__offer-original">Valeur totale des bonus : <s>12 799 EUR</s></p>
+              <p class="cta-final__offer-price">49 EUR</p>
+              <p class="cta-final__offer-fcfa">32 000 FCFA</p>
+              <p class="cta-final__offer-note">Accès complet — paiement unique</p>
+              <p class="cta-final__offer-payment">Orange Money &bull; MTN MoMo &bull; Wave &bull; Carte bancaire</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-primary cta-final__btn">
+          Je réserve ma place maintenant →
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__watermark">GOLDEOR</div>
+    <div class="container footer__inner">
+
+      <div class="footer__main">
+        <div class="footer__brand">
+          <img src="assets/images/logo-goldeor.png" alt="Goldeor" class="footer__logo" />
+          <p class="footer__tagline">
+            Il n'est pas trop tard pour rejoindre la nouvelle ruée vers l'or.
+          </p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/goldeor_fr/" target="_blank" rel="noopener" class="footer__social-btn footer__social-btn--instagram" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/boris-c%C3%A9dric-pedjiobah-53671a145/" target="_blank" rel="noopener" class="footer__social-btn footer__social-btn--linkedin" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__nav-col">
+          <p class="footer__nav-title">Navigation</p>
+          <ul class="footer__nav-list">
+            <li><a href="#programme" class="footer__nav-link">Le Programme</a></li>
+            <li><a href="#bonus" class="footer__nav-link">Les Bonus</a></li>
+            <li><a href="#temoignages" class="footer__nav-link">Témoignages</a></li>
+            <li><a href="#fondateur" class="footer__nav-link">À propos</a></li>
+            <li><a href="#cta-final" class="footer__nav-link">S'inscrire</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__nav-col">
+          <p class="footer__nav-title">Légal</p>
+          <ul class="footer__nav-list">
+            <li><a href="mentions-legales.html" class="footer__nav-link">Mentions légales</a></li>
+            <li><a href="conditions-generales.html" class="footer__nav-link">Conditions générales</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__nav-col">
+          <p class="footer__nav-title">Contact</p>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-text">contact@goldeor.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <button class="btn-primary footer__cta-btn"
+                onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+          Je m'inscris →
+        </button>
+        <p class="footer__copyright">© Goldeor 2026 — Tous droits réservés</p>
+
+        <div class="footer__legal-links">
+          <a href="mentions-legales.html" class="footer__legal-link">Mentions légales</a>
+          <a href="confidentialite.html" class="footer__legal-link">Confidentialité</a>
+        </div>
+      </div>
+
+      <p class="footer__disclaimer">
+        Ce site et son contenu ne sont pas affiliés, associés, autorisés ou endorsés par Facebook, Instagram, TikTok, LinkedIn, YouTube ou leurs sociétés mères respectives. Tous les noms de marques et logos mentionnés appartiennent à leurs propriétaires respectifs. Les résultats présentés sur cette page sont des exemples réels mais non représentatifs des résultats moyens. Les performances individuelles varient en fonction de l'implication, de l'expérience, de la situation personnelle et d'autres facteurs. Goldeor ne garantit pas de résultats spécifiques suite à la participation à cette masterclass. La participation à cette masterclass constitue une acceptation des conditions générales de vente disponibles sur notre page mentions légales. Les inscriptions sont non remboursables une fois le paiement validé.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="js/sticky-bar.js"></script>
+  <script src="js/carousel-logos.js"></script>
+  <script src="js/carousel-profils.js"></script>
+  <script src="js/scroll-animations.js"></script>
+  <script src="js/blobs.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/temoignages.js"></script>
+  <script src="js/text-reveal.js"></script>
+
+</body>
+</html>
