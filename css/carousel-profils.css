@@ -192,7 +192,7 @@
 }
 
 .profils__nav-btn:hover {
-  background: rgba(71,255,238,0.15);
+  background: rgba(196,168,232,0.15);
   border-color: var(--accent-cyan);
   color: var(--accent-cyan);
 }

@@ -306,7 +306,7 @@
 .temoignages__rating-score {
   font-size: 48px;
   font-weight: 800;
-  background: linear-gradient(to right, var(--gold), #f0d080);
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

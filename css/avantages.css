@@ -26,7 +26,7 @@
 
 .avantages__title em {
   font-style: normal;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -183,10 +183,10 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(71, 255, 238, 0.08);
+  background: rgba(196, 168, 232, 0.08);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(71, 255, 238, 0.18);
+  border: 1px solid rgba(196, 168, 232, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,7 +199,7 @@
   position: absolute;
   inset: -8px;
   border-radius: 16px;
-  background: radial-gradient(circle, rgba(71, 255, 238, 0.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(196, 168, 232, 0.28) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -227,7 +227,7 @@
 .avantages__card-amount {
   font-size: 48px;
   font-weight: 800;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

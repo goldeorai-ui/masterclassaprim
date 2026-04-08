@@ -10,8 +10,8 @@
 :root {
   /* Couleurs principales */
   --bg-page: #000000;
-  --accent-cyan: #47FFEE;
-  --accent-purple-light: #c285ff;
+  --accent-cyan: #ECA0C0;
+  --accent-purple-light: #A0B8F0;
   --accent-purple-mid: #6b5497;
   --accent-purple-dark: #350f7c;
   --gold: #C9A84C;
@@ -29,7 +29,7 @@
   --glass-blur: blur(12px);
 
   /* Bouton */
-  --btn-gradient: linear-gradient(to right, #DDD6FE, #FAF5FF, #FFFFFF, #F0FDFA, #CCFBF1);
+  --btn-gradient: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   --btn-radius: 14px;
 
   /* Spacing */
@@ -103,9 +103,12 @@ ul, ol {
   background-clip: text;
 }
 
-/* Texte accent cyan */
+/* Texte accent — gradient pastel */
 .text-accent {
-  color: var(--accent-cyan);
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Glassmorphisme standard */
@@ -134,7 +137,7 @@ ul, ol {
   outline: none;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 2px 12px rgba(180, 120, 240, 0.15);
+    0 2px 12px rgba(236, 160, 192, 0.15);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -143,8 +146,8 @@ ul, ol {
   transform: translateY(-3px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.2),
-    0 8px 32px rgba(167, 139, 250, 0.45),
-    0 4px 20px rgba(94, 234, 212, 0.35);
+    0 8px 32px rgba(236, 160, 192, 0.45),
+    0 4px 20px rgba(160, 184, 240, 0.35);
 }
 
 .btn-primary .btn-arrow {
@@ -249,9 +252,9 @@ ul, ol {
 }
 
 .icon-circle:hover {
-  background: rgba(71, 255, 238, 0.15);
+  background: rgba(196, 168, 232, 0.15);
   border-color: var(--accent-cyan);
-  box-shadow: 0 0 12px rgba(71, 255, 238, 0.4);
+  box-shadow: 0 0 12px rgba(196, 168, 232, 0.4);
 }
 
 .icon-circle:hover svg,

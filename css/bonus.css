@@ -25,7 +25,7 @@
 
 .bonus__title em {
   font-style: normal;
-  background: linear-gradient(to right, var(--gold), #f0d080);
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -449,7 +449,7 @@
   font-weight: 800;
   line-height: 1;
   margin-bottom: 8px;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -459,7 +459,7 @@
   font-size: 16px;
   font-weight: 700;
   padding: 0 24px;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

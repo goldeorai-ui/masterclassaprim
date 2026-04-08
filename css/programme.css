@@ -120,8 +120,8 @@
     transparent 100%);
   --prog-glow:   rgba(40, 130, 255, 0.22);
   --prog-glow-soft: rgba(40, 130, 255, 0.08);
-  --prog-check:  #47FFEE;
-  --prog-accent: #64b5ff;
+  --prog-check:  #ECA0C0;
+  --prog-accent: #ECA0C0;
   --badge-sphere: radial-gradient(circle at 35% 32%, #9FD8FF 0%, #2196F3 45%, #0a3d8f 100%);
   --badge-glow:  rgba(33, 150, 243, 0.55);
 }
@@ -133,8 +133,8 @@
     transparent 100%);
   --prog-glow:   rgba(140, 50, 255, 0.22);
   --prog-glow-soft: rgba(140, 50, 255, 0.08);
-  --prog-check:  #c285ff;
-  --prog-accent: #c285ff;
+  --prog-check:  #C4A8E8;
+  --prog-accent: #C4A8E8;
   --badge-sphere: radial-gradient(circle at 35% 32%, #E0AAFF 0%, #9C27B0 45%, #3a006e 100%);
   --badge-glow:  rgba(156, 39, 176, 0.55);
 }
@@ -279,7 +279,7 @@
   letter-spacing: 0.2px;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12),
-    0 2px 12px rgba(180, 120, 240, 0.15);
+    0 2px 12px rgba(236, 160, 192, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -287,8 +287,8 @@
   transform: translateY(-3px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.2),
-    0 8px 32px rgba(167, 139, 250, 0.45),
-    0 4px 20px rgba(94, 234, 212, 0.35);
+    0 8px 32px rgba(236, 160, 192, 0.45),
+    0 4px 20px rgba(160, 184, 240, 0.35);
 }
 
 /* ── Footer du programme ──────────────────────────────────── */

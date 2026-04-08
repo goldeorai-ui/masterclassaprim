@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>MasterClass Goldeor — De 0 à tes Premiers Revenus Digitaux | 3 & 4 Avril 2026</title>
-  <meta name="description" content="La MasterClass qui t'apprend à générer tes premiers revenus en ligne. Stratégies concrètes, terrain réel, résultats mesurables. 3 & 4 Avril 2026." />
+  <title>Masterclass TikTok/YouTube IA - Monétise ton contenu sans montrer ton visage | Goldeor</title>
+  <meta name="description" content="En 2 soirées, découvre le système complet pour créer des avatars IA, faire exploser ta croissance sur TikTok/YouTube et monétiser ton contenu. Sans visage, sans studio. 49€ tout inclus." />
+  <link rel="canonical" href="https://goldeor.com/masterclass" />
 
   <!-- OG -->
-  <meta property="og:title" content="MasterClass Goldeor — Tes Premiers Revenus Digitaux" />
-  <meta property="og:description" content="2 soirées pour enfin savoir comment ton business digital peut générer des revenus réels." />
+  <meta property="og:title" content="Masterclass IA - De zéro à monétisable sur TikTok/YouTube en 10 jours" />
+  <meta property="og:description" content="Le système complet pour créer des avatars IA viraux, lancer ton compte TikTok/YouTube et générer tes premiers revenus. Sans montrer ton visage. 24 et 25 Avril 2026." />
+  <meta property="og:image" content="assets/images/Photo professionnelle Boris.webp" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Masterclass IA - Monétise TikTok/YouTube sans montrer ton visage | Goldeor" />
+  <meta name="twitter:description" content="En 2 soirées, tu maîtrises le système complet pour créer des avatars IA et monétiser ton contenu sur TikTok/YouTube. 24 et 25 Avril 2026. 49€ tout inclus." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/Favicon goldeor landing page.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,6 +41,7 @@
   <link rel="stylesheet" href="css/fondateur.css" />
   <link rel="stylesheet" href="css/temoignages.css" />
   <link rel="stylesheet" href="css/cta-final.css" />
+  <link rel="stylesheet" href="css/faq.css" />
   <link rel="stylesheet" href="css/footer.css" />
 
   <!-- Style spécifique Variant B : Hero différent -->
@@ -38,7 +50,7 @@
     .hero__title .line-highlight {
       display: block;
       font-size: clamp(40px, 7vw, 88px);
-      background: linear-gradient(to right, var(--gold), #f0d080);
+      background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -113,7 +125,7 @@
     }
 
     .hero__waitlist-input:focus {
-      border-color: rgba(71,255,238,0.4);
+      border-color: rgba(196,168,232,0.4);
     }
   </style>
 </head>
@@ -123,8 +135,8 @@
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-bar__inner">
       <p class="sticky-bar__text">
-        <span class="sticky-bar__intro">On vous invite à une MasterClass en ligne EXCLUSIVE :</span>
-        <span class="sticky-bar__date">3 &amp; 4 AVRIL 2026 &bull; 20H00</span>
+        <span class="sticky-bar__intro">MasterClass en ligne EXCLUSIVE : 24 &amp; 25 Avril 2026 à 20h00 —</span>
+        <span class="sticky-bar__date">Ta place est encore disponible.</span>
       </p>
       <button class="sticky-bar__cta"
               onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
@@ -136,39 +148,33 @@
   <!-- HERO — Variant B -->
   <section class="hero" id="hero">
 
-    <!-- Vidéo de fond en boucle -->
-    <video class="hero__video" autoplay muted loop playsinline>
-      <source src="assets/images/Video hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero__video-overlay"></div>
+    <!-- Lueur bleue centrale -->
+    <div class="hero__glow"></div>
 
-    <div class="hero__blobs">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-      <div class="hero__blob hero__blob--3"></div>
-    </div>
+    <!-- Poussière d'étoiles -->
+    <canvas class="hero__stars" id="heroStars"></canvas>
 
     <div class="hero__inner">
 
       <!-- Badge callout glassmorphique -->
       <div class="hero__badge">
         <span class="hero__badge-dot"></span>
-        Pour les créateurs de contenu, influenceurs et entrepreneurs sur le territoire africain qui veulent utiliser l'IA pour créer plus vite, toucher plus loin et monétiser — sans jamais se montrer à l'écran. (Adapté également à toute personne qui désire se lancer de zéro.)
+        Tu veux créer du contenu viral et le monétiser sur TikTok/YouTube. Sans montrer ton visage, sans studio, sans équipe : cette MasterClass est taillée pour toi.
       </div>
 
       <!-- H1 -->
       <h1 class="hero__title">
-        En moins de <span class="text-accent">10 jours</span> avec les bons outils IA, un compte TikTok peut passer de zéro à <span class="text-accent">monétisable</span> — prêt pour <span class="text-accent">TikTok Shop</span>, les <span class="text-accent">partenariats de marque</span>, et les <span class="text-accent">revenus en continu</span>.
+        Ton compte TikTok/YouTube passe de zéro à <span class="text-accent">monétisable</span> en <span class="text-accent">10 jours</span> ou moins. En 2 soirées, tu maîtrises le <span class="text-accent">système complet</span> pour créer, faire grossir et monétiser ton contenu sans montrer ton visage, grâce aux <span class="text-accent">avatars IA</span>.
       </h1>
 
       <!-- H2 subtitle -->
       <p class="hero__subtitle">
-        La masterclass qui vous donne le <span class="text-accent">système complet</span> pour créer des <span class="text-accent">avatars viraux</span>, exploser vos statistiques et accéder à la <span class="text-accent">monétisation</span> — sans montrer votre visage.
+        La masterclass qui te donne le <span class="text-accent">système complet</span> pour créer tes <span class="text-accent">avatars IA</span>, faire exploser ta croissance sur TikTok/YouTube et accéder aux <span class="text-accent">partenariats de marque</span>, au <span class="text-accent">TikTok Shop</span> et aux <span class="text-accent">produits digitaux</span>. Sans montrer ton visage.
       </p>
 
       <!-- Lead-in -->
       <p class="hero__leadin">
-        Une masterclass live de 2 soirées — les 3 et 4 avril 2026 — pour les créateurs qui veulent arrêter de produire dans le vide et commencer à construire une présence IA qui grossit, qui engage, et qui ouvre les portes des revenus réels : partenariats, TikTok Shop, produits digitaux, affiliation. Tout ça sans équipe, sans studio, depuis votre téléphone.
+        Une masterclass live de 2 soirées, les 24 et 25 avril 2026, pour les créateurs qui veulent arrêter de produire dans le vide et construire une présence IA qui grossit, qui engage et qui génère des revenus réels : partenariats de marque, TikTok Shop, produits digitaux, affiliation. Sans équipe, sans studio, sans montrer ton visage.
       </p>
 
       <!-- CTA principal -->
@@ -178,18 +184,18 @@
       </button>
 
       <!-- Micro-texte -->
-      <p class="hero__micro">5 bonus exclusifs offerts dès votre inscription</p>
+      <p class="hero__micro">6 bonus exclusifs offerts dès ton inscription</p>
 
       <!-- Stats -->
       <div class="hero__stats">
         <div class="hero__stat">
           <div class="hero__stat-number">2</div>
-          <div class="hero__stat-label">Soirées intenses</div>
+          <div class="hero__stat-label">Soirées, 8 modules</div>
         </div>
         <div class="hero__stat-divider"></div>
         <div class="hero__stat">
-          <div class="hero__stat-number">6+</div>
-          <div class="hero__stat-label">Bonus offerts</div>
+          <div class="hero__stat-number">6</div>
+          <div class="hero__stat-label">Bonus exclusifs offerts</div>
         </div>
         <div class="hero__stat-divider"></div>
         <div class="hero__stat">
@@ -210,25 +216,25 @@
     <div class="logos__track-wrapper">
       <div class="logos__track">
         <!-- Série 1 -->
-        <div class="logos__card"><img src="assets/images/logos/animalperdu.png" alt="Animal Perdu Assistance" /></div>
-        <div class="logos__card"><img src="assets/images/logos/owner.png" alt="Owner Technology" /></div>
-        <div class="logos__card"><img src="assets/images/logos/complement.png" alt="Complement Education" /></div>
-        <div class="logos__card"><img src="assets/images/logos/heritières.png" alt="Les Héritières" /></div>
-        <div class="logos__card"><img src="assets/images/logos/sanitage.png" alt="Sanitage" /></div>
-        <div class="logos__card"><img src="assets/images/logos/arisgros.png" alt="Les Arisgros" /></div>
-        <div class="logos__card"><img src="assets/images/logos/moulin-dorgemont.png" alt="Le Moulin d'Orgement" /></div>
-        <div class="logos__card"><img src="assets/images/logos/rentisi.png" alt="Rentisi" /></div>
-        <div class="logos__card"><img src="assets/images/logos/retinea.png" alt="Retinea Centre Ophtalmologique" /></div>
+        <div class="logos__card"><img src="assets/images/logos/animalperdu.webp" alt="Animal Perdu Assistance" /></div>
+        <div class="logos__card"><img src="assets/images/logos/owner.webp" alt="Owner Technology" /></div>
+        <div class="logos__card"><img src="assets/images/logos/complement.webp" alt="Complement Education" /></div>
+        <div class="logos__card"><img src="assets/images/logos/heritières.webp" alt="Les Héritières" /></div>
+        <div class="logos__card"><img src="assets/images/logos/sanitage.webp" alt="Sanitage" /></div>
+        <div class="logos__card"><img src="assets/images/logos/arisgros.webp" alt="Les Arisgros" /></div>
+        <div class="logos__card"><img src="assets/images/logos/moulin-dorgemont.webp" alt="Le Moulin d'Orgement" /></div>
+        <div class="logos__card"><img src="assets/images/logos/rentisi.webp" alt="Rentisi" /></div>
+        <div class="logos__card"><img src="assets/images/logos/retinea.webp" alt="Retinea Centre Ophtalmologique" /></div>
         <!-- Série 2 — dupliquée pour le scroll infini -->
-        <div class="logos__card"><img src="assets/images/logos/animalperdu.png" alt="Animal Perdu Assistance" /></div>
-        <div class="logos__card"><img src="assets/images/logos/owner.png" alt="Owner Technology" /></div>
-        <div class="logos__card"><img src="assets/images/logos/complement.png" alt="Complement Education" /></div>
-        <div class="logos__card"><img src="assets/images/logos/heritières.png" alt="Les Héritières" /></div>
-        <div class="logos__card"><img src="assets/images/logos/sanitage.png" alt="Sanitage" /></div>
-        <div class="logos__card"><img src="assets/images/logos/arisgros.png" alt="Les Arisgros" /></div>
-        <div class="logos__card"><img src="assets/images/logos/moulin-dorgemont.png" alt="Le Moulin d'Orgement" /></div>
-        <div class="logos__card"><img src="assets/images/logos/rentisi.png" alt="Rentisi" /></div>
-        <div class="logos__card"><img src="assets/images/logos/retinea.png" alt="Retinea Centre Ophtalmologique" /></div>
+        <div class="logos__card"><img src="assets/images/logos/animalperdu.webp" alt="Animal Perdu Assistance" /></div>
+        <div class="logos__card"><img src="assets/images/logos/owner.webp" alt="Owner Technology" /></div>
+        <div class="logos__card"><img src="assets/images/logos/complement.webp" alt="Complement Education" /></div>
+        <div class="logos__card"><img src="assets/images/logos/heritières.webp" alt="Les Héritières" /></div>
+        <div class="logos__card"><img src="assets/images/logos/sanitage.webp" alt="Sanitage" /></div>
+        <div class="logos__card"><img src="assets/images/logos/arisgros.webp" alt="Les Arisgros" /></div>
+        <div class="logos__card"><img src="assets/images/logos/moulin-dorgemont.webp" alt="Le Moulin d'Orgement" /></div>
+        <div class="logos__card"><img src="assets/images/logos/rentisi.webp" alt="Rentisi" /></div>
+        <div class="logos__card"><img src="assets/images/logos/retinea.webp" alt="Retinea Centre Ophtalmologique" /></div>
       </div>
     </div>
   </section>
@@ -239,7 +245,7 @@
       <div class="probleme__header">
         <div class="badge-pill"><span class="hero__badge-dot"></span>Le constat</div>
         <h2 class="probleme__title">
-          Vous créez. Vous postez. Et pourtant, rien ne décolle vraiment.
+          Tu vois des comptes TikTok exploser avec du contenu que tu aurais pu créer toi-même. La différence ce n'est pas le talent. C'est le système.
         </h2>
       </div>
 
@@ -254,11 +260,11 @@
           </div>
           <h3 class="problem-card__title">Votre réalité aujourd'hui</h3>
           <ul class="problem-card__list problem-card__list--negative">
-            <li>Vous créez, vous postez, ça disparaît</li>
-            <li>Les marques ne vous contactent pas</li>
-            <li>Quand elles le font, elles sous-paient</li>
-            <li>Votre contenu se noie dans le recyclé</li>
-            <li>Vous attendez des résultats qui ne viennent pas</li>
+            <li>Tu vois du contenu cinématographique partout sur TikTok et YouTube et tu ne sais pas comment c'est produit</li>
+            <li>Tu penses que c'est réservé à ceux qui ont un budget, une équipe, un studio</li>
+            <li>Tu as une vision créative mais pas le système pour la concrétiser rapidement</li>
+            <li>Tu produis du contenu sans régularité, c'est épuisant et ce n'est pas monétisé</li>
+            <li>Tu ne sais pas comment transformer ta créativité en produit qui se vend</li>
           </ul>
         </div>
 
@@ -271,11 +277,11 @@
           </div>
           <h3 class="problem-card__title">Avec la Masterclass Goldeor</h3>
           <ul class="problem-card__list problem-card__list--positive">
-            <li>Un système qui produit à votre place</li>
-            <li>Des outils que 99% des créateurs africains ignorent</li>
-            <li>Un avatar IA qui travaille 24h/24 sans vous</li>
-            <li>Du contenu viral reproductible à l'infini</li>
-            <li>La méthode exacte pour accéder aux partenariats</li>
+            <li>Tu comprendras exactement comment sont produits les contenus que tu admires sur TikTok et YouTube</li>
+            <li>Tu créeras du contenu cinématographique de qualité sans budget, sans studio, sans équipe</li>
+            <li>Tu auras un système qui produira du contenu à ta place grâce à un ou plusieurs avatars IA</li>
+            <li>Tu publieras régulièrement grâce à des systèmes qui te permettront de rester constant sans t'épuiser</li>
+            <li>Tu transformeras ta créativité en produit digital qui te générera des revenus réels</li>
           </ul>
         </div>
 
@@ -288,11 +294,11 @@
           </div>
           <h3 class="problem-card__title">Les résultats</h3>
           <ul class="problem-card__list problem-card__list--results">
-            <li>De zéro à monétisable en moins de 10 jours</li>
-            <li>Un contenu que les marques remarquent enfin</li>
-            <li>Une maîtrise réelle, pas un raccourci</li>
-            <li>Une avance que vos concurrents ne pourront pas racheter</li>
-            <li>Vous dans le train — pas sur le quai</li>
+            <li>Un compte TikTok ou YouTube monétisable en moins de 10 jours</li>
+            <li>Des marques qui te contactent parce que ton contenu se démarque vraiment</li>
+            <li>Un avatar IA qui existe réellement et qui atteint le plus haut niveau de réalisme en 2026</li>
+            <li>Un premier produit digital créé et prêt à être vendu</li>
+            <li>Une longueur d'avance que la majorité des créateurs africains n'ont pas encore</li>
           </ul>
         </div>
 
@@ -300,7 +306,7 @@
 
       <!-- Phrase finale -->
       <div class="problem-quote">
-        <p>La nouvelle ruée vers l'or a commencé. La question n'est pas de savoir si vous allez y participer — c'est de savoir si vous allez arriver à temps.</p>
+        <p>La nouvelle ruée vers l'or a commencé. La fenêtre TikTok/YouTube pour l'Afrique est ouverte, mais pas pour longtemps. Ceux qui entrent maintenant récolteront demain ce que ceux qui attendent ne pourront plus jamais semer.</p>
       </div>
     </div>
   </section>
@@ -310,7 +316,7 @@
     <div class="container">
       <div class="programme__header">
         <div class="badge-pill"><span class="hero__badge-dot"></span>Le programme</div>
-        <h2 class="programme__title">Nous vous donnerons les clés de l'intelligence artificielle pour que vous ayez un avantage presque injuste par rapport à votre concurrence.</h2>
+        <h2 class="programme__title">En 2 soirées tu auras entre les mains le système exact que les plus grands comptes TikTok/YouTube utilisent pour créer, scaler et monétiser leur contenu.</h2>
       </div>
 
       <div class="programme__sessions">
@@ -325,7 +331,8 @@
             </svg>
           </div>
           <div class="prog-card__meta">Soirée 1</div>
-          <div class="prog-card__day">Vendredi 3 Avril 2026 • 20H00</div>
+          <div class="prog-card__day">Vendredi 10 Avril 2026 • 20H00</div>
+          <p class="prog-card__desc">La nuit où tu construis ta base : ton kit de marque, tes visuels publicitaires, tes influenceurs IA et tes carrousels viraux.</p>
           <div class="prog-card__divider"><span>Au programme</span></div>
           <ul class="prog-card__modules">
             <li class="prog-card__module">
@@ -338,23 +345,11 @@
             </li>
             <li class="prog-card__module">
               <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 03</strong> — La méthode publicitaire Meta adaptée au budget et à la maturité de votre entreprise — et les visuels IA illimités qui font cliquer exactement votre cible</span>
+              <span><strong>MODULE 03</strong> — Faites la promotion de votre marque, de vos produits physiques ou digitaux avec des influenceurs IA au rendu ultra-réaliste — sans acteurs, sans tournage, sans studio. Juste une connexion internet.</span>
             </li>
             <li class="prog-card__module">
               <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 04</strong> — Faites la promotion de votre marque, de vos produits physiques ou digitaux avec des influenceurs IA au rendu ultra-réaliste — sans acteurs, sans tournage, sans studio. Juste une connexion internet.</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 05</strong> — Les mots exacts qui déclenchent l'achat — le copywriting qui touche votre client au point précis où il ne peut plus dire non</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 06</strong> — La recette LinkedIn pour passer de profil invisible à référence reconnue dans votre secteur — avec les stratégies de publication qui fonctionnent sur le territoire africain</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 07</strong> — L'art du carrousel viral qui force le swipe, génère des partages, et transforme chaque post en machine d'acquisition gratuite</span>
+              <span><strong>MODULE 04</strong> — L'art du carrousel viral qui force le swipe, génère des partages, et transforme chaque post en machine d'acquisition gratuite</span>
             </li>
           </ul>
           <button class="prog-card__cta"
@@ -372,40 +367,25 @@
             </svg>
           </div>
           <div class="prog-card__meta">Soirée 2</div>
-          <div class="prog-card__day">Samedi 4 Avril 2026 • 20H00</div>
+          <div class="prog-card__day">Samedi 11 Avril 2026 • 20H00</div>
+          <p class="prog-card__desc">La nuit où tu passes à l'action : ton avatar IA, tes mini-films, ton premier produit digital et ta stratégie TikTok/YouTube complète.</p>
           <div class="prog-card__divider"><span>Au programme</span></div>
           <ul class="prog-card__modules">
             <li class="prog-card__module">
               <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 08</strong> — Les niches sur les réseaux sociaux qui permettent de croître et d'accéder à la monétisation le plus rapidement — sans jamais montrer son visage</span>
+              <span><strong>MODULE 05</strong> — Créez et lancez votre avatar IA : votre clone digital qui produit du contenu, représente votre marque et travaille 24h/24 — sans vous</span>
             </li>
             <li class="prog-card__module">
               <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 09</strong> — Créez et lancez votre avatar IA : votre clone digital qui produit du contenu, représente votre marque et travaille 24h/24 — sans vous</span>
+              <span><strong>MODULE 06</strong> — Vos propres mini-films de marque cinématographiques — produits avec l'IA, sans caméra, sans équipe, sans budget de production</span>
             </li>
             <li class="prog-card__module">
               <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 10</strong> — Profitez du courant de viralité qu'apporte la création de contenu IA pour lancer votre présence TikTok et atteindre vos premiers milliers d'abonnés</span>
+              <span><strong>MODULE 07</strong> — Créez votre produit digital pour commercialiser votre expertise et générer des revenus auprès des personnes prêtes à payer pour ce que vous savez faire</span>
             </li>
             <li class="prog-card__module">
               <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 11</strong> — Vos propres mini-films de marque cinématographiques — produits avec l'IA, sans caméra, sans équipe, sans budget de production</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 12</strong> — Les bases de montage qui vous permettront d'éditer rapidement vos vidéos vous-même — sans recourir à un monteur professionnel</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 13</strong> — Créez votre produit digital pour commercialiser votre expertise et générer des revenus auprès des personnes prêtes à payer pour ce que vous savez faire</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 14</strong> — Apprenez à maîtriser Google Veo, le premier outil de génération de vidéo IA au monde</span>
-            </li>
-            <li class="prog-card__module">
-              <span class="prog-card__check">✓</span>
-              <span><strong>MODULE 15</strong> — Apprenez à maîtriser Google Nano Banana, le premier outil de génération d'image au monde</span>
+              <span><strong>MODULE 08</strong> — Apprenez à maîtriser Google Nano Banana, le premier outil de génération d'image au monde</span>
             </li>
           </ul>
           <button class="prog-card__cta"
@@ -439,10 +419,6 @@
           </div>
           <span class="bonus__card-value">Valeur : 300 EUR</span>
           <h3 class="bonus__card-title">+100 Templates Canva prêts à l'emploi pour votre marque (posts, stories, carrousels, bannières LinkedIn, affiches)</h3>
-          <div class="bonus__card-time">
-            <span class="bonus__card-time-before">Avant : <strong>6 mois</strong></span>
-            <span class="bonus__card-time-today">Aujourd'hui : <strong>1 journée</strong></span>
-          </div>
         </div>
         <div class="bonus__card reveal reveal--delay-2">
           <span class="bonus__badge">OFFERT</span>
@@ -455,10 +431,6 @@
           </div>
           <span class="bonus__card-value">Valeur : 5 000 EUR</span>
           <h3 class="bonus__card-title">Séquence complète de prompts pour réaliser vos shootings virtuels, lookbooks et visuels de marque — sans photographe, sans lieu de shooting coûteux, sans influenceur, sans équipements professionnels</h3>
-          <div class="bonus__card-time">
-            <span class="bonus__card-time-before">Avant : <strong>3 à 5 ans</strong></span>
-            <span class="bonus__card-time-today">Aujourd'hui : <strong>1 semaine</strong></span>
-          </div>
         </div>
         <div class="bonus__card reveal reveal--delay-3">
           <span class="bonus__badge">OFFERT</span>
@@ -471,10 +443,6 @@
           </div>
           <span class="bonus__card-value">Valeur : 300 EUR</span>
           <h3 class="bonus__card-title">Le Guide des 1000 Accroches qui ont marché depuis 1900 — classées par secteur, émotion et plateforme, adaptées au marché africain francophone</h3>
-          <div class="bonus__card-time">
-            <span class="bonus__card-time-before">Avant : <strong>toute une vie</strong></span>
-            <span class="bonus__card-time-today">Aujourd'hui : <strong>immédiat</strong></span>
-          </div>
         </div>
         <div class="bonus__card reveal reveal--delay-4">
           <span class="bonus__badge">OFFERT</span>
@@ -487,10 +455,6 @@
           </div>
           <span class="bonus__card-value">Valeur : 7 000 EUR</span>
           <h3 class="bonus__card-title">Arsenal Complet de Prompts pour créer des histoires virales sur les réseaux sociaux</h3>
-          <div class="bonus__card-time">
-            <span class="bonus__card-time-before">Avant : <strong>7 ans</strong></span>
-            <span class="bonus__card-time-today">Aujourd'hui : <strong>4 heures</strong></span>
-          </div>
         </div>
         <div class="bonus__card reveal reveal--delay-5">
           <span class="bonus__badge">OFFERT</span>
@@ -515,10 +479,6 @@
           </div>
           <span class="bonus__card-value">Valeur : 3 000 EUR</span>
           <h3 class="bonus__card-title">Accès aux replays des 2 soirées — revoyez chaque module autant de fois que nécessaire pour maîtriser chaque outil à votre rythme</h3>
-          <div class="bonus__card-time">
-            <span class="bonus__card-time-before">Avant : <strong>impossible</strong></span>
-            <span class="bonus__card-time-today">Aujourd'hui : <strong>illimité</strong></span>
-          </div>
         </div>
       </div>
 
@@ -591,7 +551,7 @@
   <section class="profils section" id="profils">
     <div class="container">
       <div class="profils__header">
-        <div class="badge-pill"><span class="hero__badge-dot"></span>Pour qui ?</div>
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Masterclass Parfait pour les profils suivants</div>
       </div>
 
       <div class="profils__carousel">
@@ -632,8 +592,8 @@
   <section class="avantages section" id="avantages">
     <div class="container">
       <div class="avantages__header">
-        <div class="badge-pill"><span class="hero__badge-dot"></span>Ce que vous ne trouverez nulle part ailleurs</div>
-        <h2 class="avantages__title">Ce que vous ne trouverez nulle part ailleurs sur le territoire africain</h2>
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Un contenu réellement exclusif pour la toute première fois</div>
+        <h2 class="avantages__title">Ce que vous ne trouverez nulle part ailleurs</h2>
       </div>
 
       <div class="avantages__layout">
@@ -641,45 +601,45 @@
           <div class="avantages__item avantages__item--blue reveal">
             <div class="avantages__item-icon">🚀</div>
             <div class="avantages__item-content">
-              <h3 class="avantages__item-title">La viralité n'est plus une question de chance</h3>
+              <h3 class="avantages__item-title">La viralité n'est plus une question de chance, c'est une question de système</h3>
               <p class="avantages__item-desc">
-                Vous apprenez les mécaniques exactes de l'algorithme TikTok et les structures de contenu qui déclenchent la distribution massive — reproductibles, répétables, scalables.
+                Tu apprendras les mécaniques exactes de l'algorithme TikTok/YouTube et les structures de contenu qui déclenchent la distribution massive. Reproductibles, répétables, scalables.
               </p>
             </div>
           </div>
           <div class="avantages__item avantages__item--green reveal reveal--delay-1">
             <div class="avantages__item-icon">💰</div>
             <div class="avantages__item-content">
-              <h3 class="avantages__item-title">Monétisation accessible dès les premiers milliers d'abonnés</h3>
+              <h3 class="avantages__item-title">La monétisation commence dès tes premiers milliers d'abonnés</h3>
               <p class="avantages__item-desc">
-                TikTok Shop, partenariats de marque, produits digitaux, affiliation — vous comprenez comment chaque palier d'audience se convertit en revenus concrets.
+                TikTok Shop, partenariats de marque, produits digitaux, affiliation. Tu comprendras comment chaque palier d'audience se convertit en revenus concrets, dès le début.
               </p>
             </div>
           </div>
           <div class="avantages__item avantages__item--orange reveal reveal--delay-2">
             <div class="avantages__item-icon">🤖</div>
             <div class="avantages__item-content">
-              <h3 class="avantages__item-title">Votre avatar travaille pendant que vous dormez</h3>
+              <h3 class="avantages__item-title">Ton avatar travaille pendant que tu dors</h3>
               <p class="avantages__item-desc">
-                Il représente votre marque, produit le contenu le plus tendance, capture les formats les plus viraux — sans que vous ayez à apparaître à l'écran une seule fois.
+                Il représente ta marque, produit du contenu, capture les formats les plus viraux du moment. Sans que tu aies à apparaître à l'écran une seule fois.
               </p>
             </div>
           </div>
           <div class="avantages__item avantages__item--yellow reveal reveal--delay-3">
             <div class="avantages__item-icon">🌍</div>
             <div class="avantages__item-content">
-              <h3 class="avantages__item-title">Des méthodes internationales, adaptées à votre réalité</h3>
+              <h3 class="avantages__item-title">Des méthodes utilisées par les plus grands comptes, adaptées à la réalité africaine</h3>
               <p class="avantages__item-desc">
-                Des systèmes testés, traduits pour le contexte africain, avec les plateformes, les niches et les codes culturels qui fonctionnent ici.
+                Des systèmes testés et traduits pour le contexte africain, avec les plateformes, les niches et les codes culturels qui fonctionnent ici. Pas des conseils copiés-collés d'un marché occidental.
               </p>
             </div>
           </div>
           <div class="avantages__item avantages__item--pink reveal reveal--delay-4">
             <div class="avantages__item-icon">⏳</div>
             <div class="avantages__item-content">
-              <h3 class="avantages__item-title">La fenêtre est encore ouverte — pas pour longtemps</h3>
+              <h3 class="avantages__item-title">La fenêtre TikTok/YouTube pour l'Afrique est encore ouverte, pas pour longtemps</h3>
               <p class="avantages__item-desc">
-                Avant que le marché ne soit définitivement saturé, vous pouvez prendre une position que personne ne pourra vous racheter.
+                Avant que le marché ne soit saturé, tu peux prendre une position que personne ne pourra jamais te racheter. Ceux qui entrent maintenant ont un avantage structurel sur tous ceux qui attendront.
               </p>
             </div>
           </div>
@@ -688,10 +648,10 @@
         <!-- Carte résumé -->
         <div class="avantages__card reveal">
           <div class="avantages__card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#47FFEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="rgba(71,255,238,0.12)" stroke="#47FFEE"/>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4A8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="rgba(196,168,232,0.12)" stroke="#C4A8E8"/>
               <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
-              <circle cx="12" cy="16" r="1.5" fill="#47FFEE"/>
+              <circle cx="12" cy="16" r="1.5" fill="#C4A8E8"/>
             </svg>
           </div>
           <h3 class="avantages__card-title">Ce que vous débloquez</h3>
@@ -704,28 +664,32 @@
           <div class="avantages__card-includes">
             <div class="avantages__card-include">
               <span class="avantages__card-include-icon">✓</span>
-              Session 1 — 3 Avril 2026 à 20h00
+              Session 1 — Vendredi 24 Avril 2026 à 20h00
             </div>
             <div class="avantages__card-include">
               <span class="avantages__card-include-icon">✓</span>
-              Session 2 — 4 Avril 2026 à 20h00
+              Session 2 — Samedi 25 Avril 2026 à 20h00
             </div>
             <div class="avantages__card-include">
               <span class="avantages__card-include-icon">✓</span>
-              5 bonus exclusifs (valeur : 12 799 EUR)
+              6 bonus exclusifs d'une valeur de 12 799 EUR
             </div>
             <div class="avantages__card-include">
               <span class="avantages__card-include-icon">✓</span>
-              Accès à la communauté privée Skool
+              Accès à la communauté Skool
             </div>
             <div class="avantages__card-include">
               <span class="avantages__card-include-icon">✓</span>
-              Certificat IA User All World
+              AI Certificate All World Creator
+            </div>
+            <div class="avantages__card-include">
+              <span class="avantages__card-include-icon">✓</span>
+              Accès aux replays des 2 soirées
             </div>
           </div>
           <button class="btn-primary avantages__card-cta"
                   onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
-            Je m'inscris maintenant
+            Je veux mon accès maintenant
           </button>
         </div>
       </div>
@@ -738,25 +702,25 @@
       <div class="fondateur__layout">
         <div class="fondateur__visual reveal">
           <div class="fondateur__photo-wrapper">
-            <img src="assets/images/Photo professionnelle Boris.jpeg" alt="Boris Pedjiobah" class="fondateur__photo" />
+            <img src="assets/images/Photo professionnelle Boris.webp" alt="Boris Pedjiobah" class="fondateur__photo" />
             <div class="fondateur__badge fondateur__badge--top">
               <span class="fondateur__badge-dot"></span>
-              <span class="fondateur__badge-text">Directeur marketing et Growth IA Expert</span>
+              <span class="fondateur__badge-text">Directeur Marketing · Growth IA Expert</span>
             </div>
             <div class="fondateur__stats-bar">
               <div class="fondateur__stat-item">
-                <span class="fondateur__stat-value" data-count-accel="8" data-duration="3500">0</span>
+                <span class="fondateur__stat-value" data-count-accel="9" data-duration="3500">0</span>
                 <span class="fondateur__stat-label">ans d'expérience</span>
               </div>
               <div class="fondateur__stat-divider"></div>
               <div class="fondateur__stat-item">
                 <span class="fondateur__stat-value" data-count-accel="17" data-suffix=" M €" data-decimal="true" data-duration="3000">0</span>
-                <span class="fondateur__stat-label">plus d'1,7 million généré</span>
+                <span class="fondateur__stat-label">1,7 M€ générés</span>
               </div>
               <div class="fondateur__stat-divider"></div>
               <div class="fondateur__stat-item">
                 <span class="fondateur__stat-value" data-count-accel="1360" data-duration="2500">0</span>
-                <span class="fondateur__stat-label">leads générés au cours des 30 derniers jours</span>
+                <span class="fondateur__stat-label">leads en 30 jours</span>
               </div>
             </div>
           </div>
@@ -766,33 +730,35 @@
           <div class="badge-pill"><span class="hero__badge-dot"></span>Qui suis-je &amp; qu'est-ce que Goldeor ?</div>
           <h2 class="fondateur__title">Qui suis-je &amp; qu'est-ce que Goldeor ?</h2>
           <p class="fondateur__name">Boris Pedjiobah</p>
-          <p class="fondateur__attribute">Expert en contenu digital &amp; acquisition de clients via les réseaux sociaux</p>
+          <p class="fondateur__attribute">Expert en contenu digital et acquisition de clients via les réseaux sociaux</p>
 
           <div class="fondateur__bio">
-            <p>[À REMPLACER PAR BORIS]</p>
+            <p>J'ai passé 9 ans à construire des présences digitales pour des marques, à une époque où tout se faisait à la main, avec des agences, des budgets, et beaucoup de temps perdu.</p>
+            <p>Aujourd'hui, avec l'IA, je fais en 4 heures ce qui prenait 4 semaines. J'ai généré 1 360 leads en 30 jours pour un seul client. J'ai accompagné plus de 600 clients à développer leur présence digitale et générer des revenus réels en ligne.</p>
+            <p>J'ai décidé de tout partager. Pour que tu aies en 2 soirs ce que j'ai mis 9 ans à construire. Parce que l'IA ne va pas t'attendre.</p>
           </div>
 
           <div class="fondateur__metrics">
             <div class="fondateur__metric">
               <div class="fondateur__metric-value">250+</div>
-              <div class="fondateur__metric-label">Personnes formées</div>
+              <div class="fondateur__metric-label">Partenaires accompagnés</div>
             </div>
             <div class="fondateur__metric">
-              <div class="fondateur__metric-value">8+</div>
-              <div class="fondateur__metric-label">Marques accompagnées</div>
+              <div class="fondateur__metric-value">600+</div>
+              <div class="fondateur__metric-label">Clients accompagnés</div>
             </div>
             <div class="fondateur__metric">
               <div class="fondateur__metric-value">4.9★</div>
-              <div class="fondateur__metric-label">Note participants</div>
+              <div class="fondateur__metric-label">Note</div>
             </div>
           </div>
 
           <p class="fondateur__clients-label">Clients accompagnés :</p>
           <div class="fondateur__clients">
-            <img src="assets/images/logos/animalperdu.png" alt="Animal Perdu" class="fondateur__client-logo" />
-            <img src="assets/images/logos/owner.png" alt="Owner" class="fondateur__client-logo" />
-            <img src="assets/images/logos/complement.png" alt="Complement" class="fondateur__client-logo" />
-            <img src="assets/images/logos/heritières.png" alt="Les Héritières" class="fondateur__client-logo" />
+            <img src="assets/images/logos/animalperdu.webp" alt="Animal Perdu" class="fondateur__client-logo" />
+            <img src="assets/images/logos/owner.webp" alt="Owner" class="fondateur__client-logo" />
+            <img src="assets/images/logos/complement.webp" alt="Complement" class="fondateur__client-logo" />
+            <img src="assets/images/logos/heritières.webp" alt="Les Héritières" class="fondateur__client-logo" />
           </div>
         </div>
       </div>
@@ -811,7 +777,7 @@
         <div class="temoignages__rating-score">4.9</div>
         <div>
           <div class="temoignages__rating-stars">★★★★★</div>
-          <div class="temoignages__rating-label">Note moyenne — 250+ participants</div>
+          <div class="temoignages__rating-label">Note moyenne — 600+ partenaires</div>
         </div>
       </div>
 
@@ -822,19 +788,13 @@
             <div class="temoignage-card__quote">"</div>
             <div class="temoignage-card__stars">★★★★★</div>
             <p class="temoignage-card__text">
-              "Le service est tout simplement exceptionnel ! Chaque détail est méticuleusement
-              pensé. Leur capacité à susciter mes émotions avant même la livraison finale du
-              site est incomparable — une atmosphère hyper conviviale. On se revoit très vite !"
+              "C'est fou comment j'avais des blocages sur mes visuels publicitaires alors que la solution était juste là. Boris m'a montré comment générer des dizaines d'images avec l'IA en quelques heures seulement. Ce qui me prenait une semaine, je le fais maintenant en une matinée. Ma stratégie Meta a complètement changé depuis."
             </p>
-            <div class="temoignage-card__result">
-              <span class="temoignage-card__result-icon">✨</span>
-              Expérience au-delà de toutes les attentes
-            </div>
             <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar">H</div>
+              <div class="temoignage-card__avatar">F</div>
               <div>
-                <div class="temoignage-card__name">HuztrielListman</div>
-                <div class="temoignage-card__role">Entrepreneur — E-commerce & Digital</div>
+                <div class="temoignage-card__name">Fabrice N.</div>
+                <div class="temoignage-card__role">Entrepreneur</div>
               </div>
             </div>
           </div>
@@ -843,74 +803,73 @@
             <div class="temoignage-card__quote">"</div>
             <div class="temoignage-card__stars">★★★★★</div>
             <p class="temoignage-card__text">
-              "Merci énormément Boris pour la qualité de ton travail. Le site tout juste créé
-              est ultra beau et brandé. Il dépasse mes attentes. Je te recommande à 100% et
-              espère continuer à travailler avec toi."
+              "Honnêtement on en parle pas assez, mais débloquer sa créativité avec les bons outils ça change vraiment tout. Boris a su identifier exactement où je bloquais et m'a montré comment varier mes angles publicitaires. Mes pubs performent enfin."
             </p>
-            <div class="temoignage-card__result">
-              <span class="temoignage-card__result-icon">🎨</span>
-              Site ultra beau, brandé, au-delà des attentes
-            </div>
-            <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar">G</div>
-              <div>
-                <div class="temoignage-card__name">Gilbert Terrada</div>
-                <div class="temoignage-card__role">Entrepreneur — E-commerce</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="temoignage-card">
-            <div class="temoignage-card__quote">"</div>
-            <div class="temoignage-card__stars">★★★★★</div>
-            <p class="temoignage-card__text">
-              "J'ai rencontré Boris sur ComeUp en cherchant un produit winner. Il a fait
-              des recherches poussées et nous avons trouvé mon produit. Site web professionnel
-              sur mesure livré. Vous pouvez lui faire entièrement confiance."
-            </p>
-            <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar">M</div>
-              <div>
-                <div class="temoignage-card__name">Maturin Feudjio</div>
-                <div class="temoignage-card__role">E-commerçant — Dropshipping</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="temoignage-card">
-            <div class="temoignage-card__quote">"</div>
-            <div class="temoignage-card__stars">★★★★★</div>
-            <p class="temoignage-card__text">
-              "Très bon travail, il est réactif à toute demande et même après livraison
-              il est toujours disponible pour donner des conseils et aider dans
-              l'avancement du projet."
-            </p>
-            <div class="temoignage-card__author">
-              <div class="temoignage-card__avatar">S</div>
-              <div>
-                <div class="temoignage-card__name">Smithatout</div>
-                <div class="temoignage-card__role">Entrepreneur — Business digital</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="temoignage-card">
-            <div class="temoignage-card__quote">"</div>
-            <div class="temoignage-card__stars">★★★★★</div>
-            <p class="temoignage-card__text">
-              "La patience est primordiale dans ce domaine et il a su me rassurer. Très bon
-              feeling, un résultat très professionnel. J'ai déjà hâte de travailler avec lui
-              sur mon deuxième projet !"
-            </p>
-            <div class="temoignage-card__result">
-              <span class="temoignage-card__result-icon">🤝</span>
-              Déjà sur le 2ème projet ensemble
-            </div>
             <div class="temoignage-card__author">
               <div class="temoignage-card__avatar">C</div>
               <div>
                 <div class="temoignage-card__name">Compte privé</div>
-                <div class="temoignage-card__role">Entrepreneur — Boutique en ligne</div>
+                <div class="temoignage-card__role">Entrepreneur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "Franchement je m'attendais pas à ça. Je suis comptable, les réseaux sociaux c'était pas mon monde du tout. On a commencé doucement avec ChatGPT pour mon travail quotidien, et Boris a su aller à mon rythme sans me perdre. Petit à petit on a ajouté d'autres outils, et aujourd'hui je crée des vidéos pour mes réseaux sans montrer mon visage. Mes enfants me regardent faire et ils comprennent pas comment leur père est arrivé là aussi vite. Moi non plus d'ailleurs."
+            </p>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">L</div>
+              <div>
+                <div class="temoignage-card__name">Léonard M.</div>
+                <div class="temoignage-card__role">Comptable</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★☆</div>
+            <p class="temoignage-card__text">
+              "De vous à moi, j'étais vraiment pas convaincu au départ. Mais Boris prend le temps, il explique sans condescendance. On aurait pu aller encore plus loin sur certains outils mais ce qu'on a fait ensemble m'a suffi pour démarrer."
+            </p>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">C</div>
+              <div>
+                <div class="temoignage-card__name">Compte privé</div>
+                <div class="temoignage-card__role">Entrepreneur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "Ce qui m'a frappé c'est qu'il connaît vraiment les réalités de Douala. Pas des conseils copiés-collés d'un marché occidental. On a créé des visuels publicitaires qui parlent directement à ma clientèle locale, avec les codes qu'elle reconnaît. Résultat concret, immédiat."
+            </p>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">J</div>
+              <div>
+                <div class="temoignage-card__name">Jean-Pierre E.</div>
+                <div class="temoignage-card__role">Entrepreneur, Douala</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="temoignage-card">
+            <div class="temoignage-card__quote">"</div>
+            <div class="temoignage-card__stars">★★★★★</div>
+            <p class="temoignage-card__text">
+              "Sincèrement je cherchais quelqu'un qui allait pas me vendre du rêve. Boris est direct, il montre, il explique, et surtout il te fait pratiquer. Basée à Abidjan, j'avais besoin de visuels professionnels sans me ruiner en studio et en photographe. En moins d'une semaine j'avais tout ce qu'il me fallait pour lancer ma campagne Meta. Le rapport qualité prix de son accompagnement est vraiment sérieux."
+            </p>
+            <div class="temoignage-card__author">
+              <div class="temoignage-card__avatar">A</div>
+              <div>
+                <div class="temoignage-card__name">Adjoua K.</div>
+                <div class="temoignage-card__role">Entrepreneuse, Abidjan</div>
               </div>
             </div>
           </div>
@@ -927,12 +886,12 @@
 
         <div class="badge-pill cta-final__urgency-pill">
           <span class="hero__badge-dot"></span>
-          Dernière chance avant la fermeture des inscriptions
+          Les places sont limitées
         </div>
 
         <h2 class="cta-final__title">
-          <span class="line-white">Dernière chance avant la fermeture des</span>
-          <span class="line-gradient">inscriptions</span>
+          <span class="line-white">La nouvelle ruée vers l'or n'attend personne. Ta place est encore disponible,</span>
+          <span class="line-gradient">mais pas pour longtemps.</span>
         </h2>
 
         <div class="countdown">
@@ -962,27 +921,27 @@
             <div class="cta-final__offer-includes">
               <div class="cta-final__offer-item">
                 <span class="cta-final__offer-item-icon">✓</span>
-                2 soirées de live interactif (3 &amp; 4 avril, 20h00)
+                2 soirées live, 8 modules
               </div>
               <div class="cta-final__offer-item">
                 <span class="cta-final__offer-item-icon">✓</span>
-                Replays disponibles après chaque session
+                Accès aux replays
               </div>
               <div class="cta-final__offer-item">
                 <span class="cta-final__offer-item-icon">✓</span>
-                5 bonus exclusifs (valeur : 12 799 EUR)
+                6 bonus exclusifs, valeur 12 799 EUR
               </div>
               <div class="cta-final__offer-item">
                 <span class="cta-final__offer-item-icon">✓</span>
-                Accès à une communauté privée au même mindset
+                Communauté Skool
               </div>
               <div class="cta-final__offer-item">
                 <span class="cta-final__offer-item-icon">✓</span>
-                Réduction de 50% sur la communauté Skool
+                AI Certificate All World Creator
               </div>
               <div class="cta-final__offer-item">
                 <span class="cta-final__offer-item-icon">✓</span>
-                Certificat IA User All World
+                49 EUR, paiement unique
               </div>
             </div>
             <div class="cta-final__offer-divider"></div>
@@ -1004,6 +963,90 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="faq__header">
+        <div class="badge-pill"><span class="hero__badge-dot"></span>Questions fréquentes</div>
+        <h2 class="faq__title">Tout ce que tu veux savoir avant de t'inscrire</h2>
+      </div>
+
+      <div class="faq__list">
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Je suis débutant complet, est-ce que c'est fait pour moi ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Oui. La masterclass est construite pour partir de zéro. Je te montrerai chaque outil en live, étape par étape, avec les résultats en temps réel. Tu n'as besoin d'aucune expérience préalable.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Est-ce que ça marche vraiment sans montrer son visage ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Oui, c'est même l'un des angles forts de la masterclass. Tu apprendras à créer un avatar IA cohérent et réaliste qui produit du contenu à ta place, 24h/24.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Comment je paie si je suis en Afrique ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Tu peux payer via Orange Money, MTN MoMo, Wave ou carte bancaire. Le paiement est sécurisé et prend moins de 2 minutes.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Et si ma connexion internet est instable ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Tu as accès aux replays des 2 soirées immédiatement après chaque session. Si tu rates un moment en live, tu retrouves tout en replay sans limite de temps.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Est-ce que c'est uniquement pour l'Afrique ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Non. La masterclass s'adresse à tous les créateurs francophones, qu'ils soient en Afrique ou dans la diaspora. Les méthodes fonctionnent depuis n'importe où.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Est-ce que je serai remboursé si je ne suis pas satisfait ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>L'accès aux replays, aux bonus et à la communauté Skool étant livré dès ton inscription, la masterclass est non remboursable. En revanche, la valeur de ce que tu reçois dépasse largement les 49 EUR investis.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Quand est-ce que je reçois les replays et les bonus ?</span>
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__answer">
+            <p>Les replays et les bonus sont remis à la fin de la deuxième soirée, une fois le parcours complet suivi. Les bonus seuls ne suffisent pas, c'est l'expérience des 2 soirées en live qui fait la vraie différence. Ceux qui suivent les deux soirées repartent avec tout : les replays, les 6 bonus et un accès promotionnel à la communauté Skool.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__watermark">GOLDEOR</div>
@@ -1011,9 +1054,9 @@
 
       <div class="footer__main">
         <div class="footer__brand">
-          <img src="assets/images/logo-goldeor.png" alt="Goldeor" class="footer__logo" />
+          <img src="assets/images/logo-goldeor.webp" alt="Goldeor" class="footer__logo" />
           <p class="footer__tagline">
-            Il n'est pas trop tard pour rejoindre la nouvelle ruée vers l'or.
+            Ta place dans la nouvelle ruée vers l'or est encore disponible.
           </p>
           <div class="footer__socials">
             <a href="https://www.instagram.com/goldeor_fr/" target="_blank" rel="noopener" class="footer__social-btn footer__social-btn--instagram" aria-label="Instagram">
@@ -1070,7 +1113,7 @@
       </div>
 
       <p class="footer__disclaimer">
-        Ce site et son contenu ne sont pas affiliés, associés, autorisés ou endorsés par Facebook, Instagram, TikTok, LinkedIn, YouTube ou leurs sociétés mères respectives. Tous les noms de marques et logos mentionnés appartiennent à leurs propriétaires respectifs. Les résultats présentés sur cette page sont des exemples réels mais non représentatifs des résultats moyens. Les performances individuelles varient en fonction de l'implication, de l'expérience, de la situation personnelle et d'autres facteurs. Goldeor ne garantit pas de résultats spécifiques suite à la participation à cette masterclass. La participation à cette masterclass constitue une acceptation des conditions générales de vente disponibles sur notre page mentions légales. Les inscriptions sont non remboursables une fois le paiement validé.
+        Ce site et son contenu ne sont pas affiliés, associés ou endorsés par Facebook, Instagram, TikTok, LinkedIn, YouTube ou leurs sociétés mères respectives. Tous les noms de marques et logos mentionnés appartiennent à leurs propriétaires respectifs. Les résultats présentés sur cette page sont des exemples réels mais non représentatifs des résultats moyens. Les performances individuelles varient en fonction de l'implication, de l'expérience, de la situation personnelle et d'autres facteurs. Goldeor ne garantit pas de résultats spécifiques suite à la participation à cette masterclass. En t'inscrivant, tu acceptes les conditions générales de vente disponibles sur notre page mentions légales. Les inscriptions sont non remboursables une fois le paiement validé.
       </p>
 
     </div>
@@ -1087,6 +1130,8 @@
   <script src="js/counter.js"></script>
   <script src="js/temoignages.js"></script>
   <script src="js/text-reveal.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/stars.js"></script>
 
 </body>
 </html>

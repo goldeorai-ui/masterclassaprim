@@ -26,7 +26,7 @@
 
 .probleme__title em {
   font-style: normal;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple-light));
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -193,8 +193,8 @@
 .prob-icon--1 { --icon-gradient: linear-gradient(135deg, #ff6b9d 0%, #c9184a 100%); }
 .prob-icon--2 { --icon-gradient: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
 .prob-icon--3 { --icon-gradient: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%); }
-.prob-icon--4 { --icon-gradient: linear-gradient(135deg, #c285ff 0%, #7b2ff7 100%); }
-.prob-icon--5 { --icon-gradient: linear-gradient(135deg, #47FFEE 0%, #0575E6 100%); }
+.prob-icon--4 { --icon-gradient: linear-gradient(135deg, #C4A8E8 0%, #A0B8F0 100%); }
+.prob-icon--5 { --icon-gradient: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 100%); }
 .prob-icon--6 { --icon-gradient: linear-gradient(135deg, #f953c6 0%, #b91d73 100%); }
 
 /* ── Texte des cartes ─────────────────────────────────────── */
@@ -243,7 +243,7 @@
   font-size: clamp(15px, 1.8vw, 17px);
   line-height: 1.75;
   border-radius: 0 8px 8px 0;
-  background: rgba(71, 255, 238, 0.04);
+  background: rgba(196, 168, 232, 0.04);
   color: var(--accent-cyan);
   opacity: 0.15;
 }
@@ -463,8 +463,8 @@
   margin: 48px auto 0;
   text-align: center;
   padding: 20px 24px;
-  border-left: 4px solid #47FFEE;
-  background: rgba(71, 255, 238, 0.04);
+  border-left: 4px solid #ECA0C0;
+  background: rgba(196, 168, 232, 0.04);
   border-radius: 8px;
 }
 
@@ -472,7 +472,7 @@
   font-style: italic;
   font-size: 17px;
   line-height: 1.7;
-  background: linear-gradient(to right, #00D4FF 0%, #7B61FF 45%, #E91E8C 75%, #FF1493 100%);
+  background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -483,8 +483,8 @@
 .probleme__solution {
   text-align: center;
   padding: 48px;
-  background: rgba(71, 255, 238, 0.04);
-  border: 1px solid rgba(71, 255, 238, 0.15);
+  background: rgba(196, 168, 232, 0.04);
+  border: 1px solid rgba(196, 168, 232, 0.15);
   border-radius: var(--border-radius-card);
   max-width: 720px;
   margin: 0 auto;
