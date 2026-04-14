@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode de paiement - Masterclass Goldeor 24 &amp; 25 Avril 2026</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="assets/images/Favicon goldeor landing page.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #FFFFFF;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        .header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            height: 36px;
+            width: auto;
+        }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+        }
+
+        /* PROGRESS BAR */
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-circle.completed {
+            background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+            color: #1a1a1a;
+        }
+
+        .step-circle.active {
+            background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+            color: #1a1a1a;
+        }
+
+        .step-circle.future {
+            background: #333333;
+            color: #666666;
+        }
+
+        .step-label {
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .step-label.completed,
+        .step-label.active {
+            color: #FFFFFF;
+        }
+
+        .step-label.future {
+            color: #666666;
+        }
+
+        .step-line {
+            width: 40px;
+            height: 2px;
+            background: #333333;
+            margin: 0 8px;
+            flex-shrink: 0;
+        }
+
+        .step-line.completed {
+            background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+        }
+
+        /* TITLE */
+        .page-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 28px;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #AAAAAA;
+            font-size: 14px;
+            margin-bottom: 48px;
+        }
+
+        /* BUTTONS */
+        .buttons-wrapper {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pay-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pay-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 32px;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            outline: none;
+        }
+
+        .pay-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .pay-btn--card {
+            background: #FF6B00;
+            color: #FFFFFF;
+        }
+
+        .pay-btn--card:hover {
+            box-shadow: 0 8px 28px rgba(255, 107, 0, 0.35);
+        }
+
+        .pay-btn--paypal {
+            background: #0070BA;
+            color: #FFFFFF;
+        }
+
+        .pay-btn--paypal:hover {
+            box-shadow: 0 8px 28px rgba(0, 112, 186, 0.35);
+        }
+
+        .pay-btn--mobile {
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+        }
+
+        .pay-btn--mobile:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 28px rgba(255, 255, 255, 0.08);
+        }
+
+        .pay-btn-text {
+            flex-shrink: 0;
+        }
+
+        .pay-btn-logos {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .pay-btn-logos span {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            opacity: 0.85;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.18);
+            line-height: 1;
+        }
+
+        .pay-btn--mobile .pay-btn-logos span {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pay-desc {
+            font-size: 12px;
+            color: #666666;
+            text-align: center;
+            margin-top: 6px;
+            max-width: 400px;
+        }
+
+        /* FOOTER */
+        .footer {
+            flex-shrink: 0;
+            text-align: center;
+            padding: 0 24px 24px;
+        }
+
+        .footer-legal {
+            font-size: 12px;
+            color: #666666;
+            margin-bottom: 8px;
+        }
+
+        .footer-legal a {
+            color: #666666;
+            text-decoration: underline;
+        }
+
+        .footer-logos {
+            font-size: 11px;
+            color: #666666;
+            opacity: 0.6;
+            letter-spacing: 0.3px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto;
+            }
+
+            .header {
+                height: 64px;
+                padding: 0 20px;
+                justify-content: center;
+            }
+
+            .logo {
+                height: 28px;
+            }
+
+            .main {
+                padding: 0 20px;
+                justify-content: flex-start;
+                padding-top: 16px;
+            }
+
+            .progress-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                margin-bottom: 28px;
+            }
+
+            .step-line {
+                width: 2px;
+                height: 20px;
+                margin: 4px 0 4px 15px;
+            }
+
+            .step-label {
+                font-size: 11px;
+            }
+
+            .page-title {
+                font-size: 22px;
+                margin-bottom: 6px;
+            }
+
+            .page-subtitle {
+                font-size: 13px;
+                margin-bottom: 32px;
+            }
+
+            .buttons-wrapper {
+                gap: 16px;
+            }
+
+            .pay-btn {
+                padding: 16px 20px;
+                font-size: 14px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .pay-btn-logos {
+                gap: 6px;
+            }
+
+            .pay-btn-logos span {
+                font-size: 10px;
+                padding: 2px 6px;
+            }
+
+            .footer {
+                padding: 20px 20px 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .pay-btn {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <img src="assets/images/logo-goldeor.webp" alt="Goldeor" class="logo">
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="step">
+                <div class="step-circle completed">&#10003;</div>
+                <span class="step-label completed">Vos informations</span>
+            </div>
+            <div class="step-line completed"></div>
+            <div class="step">
+                <div class="step-circle active">2</div>
+                <span class="step-label active">Mode de paiement</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle future">3</div>
+                <span class="step-label future">Confirmation de paiement</span>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="page-title">Choisissez votre mode de paiement</h1>
+        <p class="page-subtitle">Sélectionnez l'option qui vous convient pour finaliser votre réservation.</p>
+
+        <!-- Payment Buttons -->
+        <div class="buttons-wrapper">
+
+            <!-- Carte de crédit -->
+            <div class="pay-block">
+                <a href="#" class="pay-btn pay-btn--card">
+                    <span class="pay-btn-text">Payer par carte de crédit</span>
+                    <div class="pay-btn-logos">
+                        <span>VISA</span>
+                        <span>MC</span>
+                        <span>AMEX</span>
+                    </div>
+                </a>
+                <p class="pay-desc">Paiement sécurisé et instantané</p>
+            </div>
+
+            <!-- PayPal -->
+            <div class="pay-block">
+                <a href="#" class="pay-btn pay-btn--paypal">
+                    <span class="pay-btn-text">Payer par PayPal</span>
+                    <div class="pay-btn-logos">
+                        <span>PayPal</span>
+                    </div>
+                </a>
+                <p class="pay-desc">Transaction rapide et protégée</p>
+            </div>
+
+            <!-- Mobile Money -->
+            <div class="pay-block">
+                <a href="#" target="_blank" rel="noopener" class="pay-btn pay-btn--mobile">
+                    <span class="pay-btn-text">Payer par Mobile Money</span>
+                    <div class="pay-btn-logos">
+                        <span>Orange</span>
+                        <span>MTN</span>
+                        <span>Wave</span>
+                    </div>
+                </a>
+                <p class="pay-desc">Vous serez redirigé vers un agent qui vous proposera la solution adaptée à votre pays.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-legal">
+            <a href="https://goldeor.com/mentions-legales/">Mentions légales</a> &middot;
+            <a href="https://goldeor.com/cgv/">Conditions générales de vente</a> &middot;
+            Paiement 100% sécurisé
+        </div>
+        <div class="footer-logos">Orange Money &middot; MTN MoMo &middot; Wave &middot; Visa &middot; Mastercard &middot; PayPal</div>
+    </div>
+
+</body>
+</html>

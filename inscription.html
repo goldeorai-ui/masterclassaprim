@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservez votre place - Masterclass Goldeor 24 &amp; 25 Avril 2026</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="assets/images/Favicon goldeor landing page.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #FFFFFF;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* LEFT COLUMN */
+        .left-col {
+            width: 50%;
+            background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .left-col::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 60%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 40%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .left-inner {
+            position: relative;
+            z-index: 2;
+            padding: 32px;
+        }
+
+        .logo-goldeor {
+            display: block;
+            height: 36px;
+            width: auto;
+            margin-bottom: 32px;
+        }
+
+        .logo-mobile {
+            display: none;
+        }
+
+        .section-title {
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 0;
+        }
+
+        .video-placeholder {
+            background: rgba(0,0,0,0.15);
+            border-radius: 16px;
+            aspect-ratio: 9 / 16;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .video-placeholder:hover {
+            transform: scale(1.02);
+        }
+
+        .play-icon {
+            width: 48px;
+            height: 48px;
+            opacity: 0.7;
+            margin-bottom: 12px;
+        }
+
+        .video-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            position: absolute;
+            bottom: 14px;
+            text-align: center;
+        }
+
+        .testimonial-title {
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 16px;
+            padding: 20px;
+            color: #1a1a1a;
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .testimonial-stars {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #F5C33B;
+        }
+
+        .testimonial-text {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background: rgba(0,0,0,0.6);
+        }
+
+        /* RIGHT COLUMN */
+        .right-col {
+            width: 50%;
+            background: #000000;
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* PROGRESS BAR */
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-circle.active {
+            background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+            color: #1a1a1a;
+        }
+
+        .step-circle.future {
+            background: #333333;
+            color: #666666;
+        }
+
+        .step-label {
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .step-label.active {
+            color: #FFFFFF;
+        }
+
+        .step-label.future {
+            color: #666666;
+        }
+
+        .step-line {
+            width: 40px;
+            height: 2px;
+            background: #333333;
+            margin: 0 8px;
+            flex-shrink: 0;
+        }
+
+        .right-title {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .right-subtitle {
+            color: #AAAAAA;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        /* FORM */
+        .form-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .form-group {
+            flex: 1;
+            margin-bottom: 14px;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: #AAAAAA;
+            margin-bottom: 6px;
+        }
+
+        .form-label .required {
+            color: #ECA0C0;
+            margin-left: 2px;
+        }
+
+        .form-input::placeholder {
+            color: #666666;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .form-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666666' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-select option {
+            background: #1a1a1a;
+            color: #FFFFFF;
+        }
+
+        /* PHONE FIELD */
+        .phone-wrapper {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+
+        .country-selector {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .country-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px 0 0 12px;
+            padding: 14px 12px;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            white-space: nowrap;
+            outline: none;
+            transition: border-color 0.2s;
+            height: 100%;
+        }
+
+        .country-btn:focus {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .country-btn .arrow {
+            font-size: 10px;
+            color: #666666;
+            margin-left: 2px;
+        }
+
+        .phone-input {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: none;
+            border-radius: 0 12px 12px 0;
+            padding: 14px 16px;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .phone-input::placeholder {
+            color: #666666;
+        }
+
+        .phone-input:focus {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .country-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 300px;
+            max-height: 280px;
+            overflow-y: auto;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            z-index: 100;
+            margin-top: 4px;
+            padding: 8px 0;
+        }
+
+        .country-dropdown.open {
+            display: block;
+        }
+
+        .country-search {
+            width: calc(100% - 16px);
+            margin: 0 8px 8px;
+            padding: 10px 12px;
+            background: #2a2a2a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+
+        .country-search::placeholder {
+            color: #666666;
+        }
+
+        .country-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #FFFFFF;
+            transition: background 0.15s;
+        }
+
+        .country-option:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .country-option .flag {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .country-option .name {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .country-option .dial {
+            color: #888888;
+            flex-shrink: 0;
+        }
+
+        .country-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 4px 0;
+        }
+
+        /* CTA BUTTON */
+        .cta-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #F5C88A 0%, #ECA0C0 35%, #C4A8E8 65%, #A0B8F0 100%);
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            border-radius: 14px;
+            padding: 16px;
+            cursor: pointer;
+            margin-top: 24px;
+            font-family: 'Inter', sans-serif;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* BOTTOM */
+        .bottom-info {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .bottom-info .legal {
+            color: #666666;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .bottom-info .payment-logos {
+            color: #666666;
+            font-size: 11px;
+            opacity: 0.6;
+            filter: grayscale(1);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                flex-direction: column;
+                overflow: visible;
+            }
+
+            .right-col {
+                width: 100%;
+                order: 1;
+                padding: 24px;
+            }
+
+            .left-col {
+                width: 100%;
+                order: 2;
+            }
+
+            .left-inner {
+                padding: 24px;
+            }
+
+            .logo-goldeor {
+                display: none;
+            }
+
+            .logo-mobile {
+                display: block;
+                height: 32px;
+                width: auto;
+                margin: 0 auto 20px;
+            }
+
+            .video-placeholder {
+                aspect-ratio: 9 / 16;
+                height: auto;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-row .form-group {
+                margin-bottom: 14px;
+            }
+
+            .step-label {
+                font-size: 10px;
+            }
+
+            .step-line {
+                width: 24px;
+            }
+
+            .right-title {
+                font-size: 20px;
+            }
+
+            .progress-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                margin-bottom: 28px;
+            }
+
+            .step-line {
+                width: 2px;
+                height: 24px;
+                margin: 4px 0 4px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- LEFT COLUMN -->
+        <div class="left-col">
+            <div class="left-inner">
+                <img src="assets/images/logo-goldeor.webp" alt="Goldeor" class="logo-goldeor">
+
+                <div class="section-title">Quelques créations</div>
+
+                <div class="video-grid">
+                    <div class="video-placeholder">
+                        <svg class="play-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="23" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="rgba(255,255,255,0.15)"/>
+                            <polygon points="19,14 19,34 36,24" fill="rgba(255,255,255,0.7)"/>
+                        </svg>
+                        <span class="video-label"></span>
+                    </div>
+                    <div class="video-placeholder">
+                        <svg class="play-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="23" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="rgba(255,255,255,0.15)"/>
+                            <polygon points="19,14 19,34 36,24" fill="rgba(255,255,255,0.7)"/>
+                        </svg>
+                        <span class="video-label"></span>
+                    </div>
+                    <div class="video-placeholder">
+                        <svg class="play-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="23" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="rgba(255,255,255,0.15)"/>
+                            <polygon points="19,14 19,34 36,24" fill="rgba(255,255,255,0.7)"/>
+                        </svg>
+                        <span class="video-label"></span>
+                    </div>
+                </div>
+
+                <div class="testimonial-title">Ce qu'ils disent après la masterclass.</div>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div>
+                                    <div class="testimonial-name">Fabrice N.</div>
+                                    <div class="testimonial-role">Entrepreneur</div>
+                                </div>
+                                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            </div>
+                            <div class="testimonial-text">&laquo;&nbsp;C'est fou comment j'avais des blocages sur mes visuels publicitaires alors que la solution était juste là. Boris m'a montré comment générer des dizaines d'images avec l'IA en quelques heures seulement. Ce qui me prenait une semaine, je le fais maintenant en une matinée. Ma stratégie Meta a complètement changé depuis.&nbsp;&raquo;</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div>
+                                    <div class="testimonial-name">Compte privé</div>
+                                    <div class="testimonial-role">Entrepreneur</div>
+                                </div>
+                                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            </div>
+                            <div class="testimonial-text">&laquo;&nbsp;Honnêtement on en parle pas assez, mais débloquer sa créativité avec les bons outils ça change vraiment tout. Boris a su identifier exactement où je bloquais et m'a montré comment varier mes angles publicitaires. Mes pubs performent enfin.&nbsp;&raquo;</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div>
+                                    <div class="testimonial-name">Léonard M.</div>
+                                    <div class="testimonial-role">Comptable</div>
+                                </div>
+                                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            </div>
+                            <div class="testimonial-text">&laquo;&nbsp;Franchement je m'attendais pas à ça. Je suis comptable, les réseaux sociaux c'était pas mon monde du tout. On a commencé doucement avec ChatGPT pour mon travail quotidien, et Boris a su aller à mon rythme sans me perdre. Petit à petit on a ajouté d'autres outils, et aujourd'hui je crée des vidéos pour mes réseaux sans montrer mon visage. Mes enfants me regardent faire et ils comprennent pas comment leur père est arrivé là aussi vite. Moi non plus d'ailleurs.&nbsp;&raquo;</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div>
+                                    <div class="testimonial-name">Compte privé</div>
+                                    <div class="testimonial-role">Entrepreneur</div>
+                                </div>
+                                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                            </div>
+                            <div class="testimonial-text">&laquo;&nbsp;De vous à moi, j'étais vraiment pas convaincu au départ. Mais Boris prend le temps, il explique sans condescendance. On aurait pu aller encore plus loin sur certains outils mais ce qu'on a fait ensemble m'a suffi pour démarrer.&nbsp;&raquo;</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div>
+                                    <div class="testimonial-name">Jean-Pierre E.</div>
+                                    <div class="testimonial-role">Entrepreneur Douala</div>
+                                </div>
+                                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            </div>
+                            <div class="testimonial-text">&laquo;&nbsp;Ce qui m'a frappé c'est qu'il connaît vraiment les réalités de Douala. Pas des conseils copiés-collés d'un marché occidental. On a créé des visuels publicitaires qui parlent directement à ma clientèle locale, avec les codes qu'elle reconnaît. Résultat concret, immédiat.&nbsp;&raquo;</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div>
+                                    <div class="testimonial-name">Adjoua K.</div>
+                                    <div class="testimonial-role">Entrepreneuse Abidjan</div>
+                                </div>
+                                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            </div>
+                            <div class="testimonial-text">&laquo;&nbsp;Sincèrement je cherchais quelqu'un qui allait pas me vendre du rêve. Boris est direct, il montre, il explique, et surtout il te fait pratiquer. Basée à Abidjan, j'avais besoin de visuels professionnels sans me ruiner en studio et en photographe. En moins d'une semaine j'avais tout ce qu'il me fallait pour lancer ma campagne Meta. Le rapport qualité prix de son accompagnement est vraiment sérieux.&nbsp;&raquo;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-dots" id="carouselDots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Témoignage 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Témoignage 2"></button>
+                    <button class="carousel-dot" data-index="2" aria-label="Témoignage 3"></button>
+                    <button class="carousel-dot" data-index="3" aria-label="Témoignage 4"></button>
+                    <button class="carousel-dot" data-index="4" aria-label="Témoignage 5"></button>
+                    <button class="carousel-dot" data-index="5" aria-label="Témoignage 6"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-col">
+            <img src="assets/images/logo-goldeor.webp" alt="Goldeor" class="logo-mobile">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="step">
+                    <div class="step-circle active">1</div>
+                    <span class="step-label active">Vos informations</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle future">2</div>
+                    <span class="step-label future">Mode de paiement</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle future">3</div>
+                    <span class="step-label future">Confirmation de paiement</span>
+                </div>
+            </div>
+
+            <h1 class="right-title">Plus qu'une étape avant de réserver votre place.</h1>
+            <p class="right-subtitle">Renseignez vos informations pour accéder au paiement.</p>
+
+            <!-- Form -->
+            <form id="inscriptionForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Prénom <span class="required">*</span></label>
+                        <input type="text" name="fname" autocomplete="given-name" placeholder="Votre prénom" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Nom <span class="required">*</span></label>
+                        <input type="text" name="lname" autocomplete="family-name" placeholder="Votre nom" required class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email <span class="required">*</span></label>
+                    <input type="email" name="email" autocomplete="email" placeholder="votre@email.com" required class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Téléphone <span class="required">*</span></label>
+                    <div class="phone-wrapper">
+                        <div class="country-selector">
+                            <button type="button" class="country-btn" id="countryBtn">
+                                <span class="flag-display" id="flagDisplay">&#127464;&#127474;</span>
+                                <span class="dial-display" id="dialDisplay">+237</span>
+                                <span class="arrow">&#9662;</span>
+                            </button>
+                            <div class="country-dropdown" id="countryDropdown">
+                                <input type="text" class="country-search" id="countrySearch" placeholder="Rechercher un pays...">
+                                <div id="countryList"></div>
+                            </div>
+                        </div>
+                        <input type="tel" name="tel" autocomplete="tel" placeholder="Votre numéro" required class="phone-input" id="phoneInput">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Profession <span class="required">*</span></label>
+                    <select name="profession" required class="form-select">
+                        <option value="" disabled selected>Sélectionnez votre profession</option>
+                        <optgroup label="Dirigeant / Entrepreneur">
+                            <option value="dg-pdg">Directeur Général / PDG</option>
+                            <option value="dirigeant-pme">Dirigeant de PME</option>
+                            <option value="entrepreneur">Entrepreneur</option>
+                            <option value="fondateur-startup">Fondateur de startup</option>
+                        </optgroup>
+                        <optgroup label="Management / Cadre">
+                            <option value="directeur-marketing">Directeur Marketing</option>
+                            <option value="directeur-commercial">Directeur Commercial</option>
+                            <option value="directeur-communication">Directeur de la Communication</option>
+                            <option value="manager-chef-projet">Manager / Chef de projet</option>
+                            <option value="responsable-ecommerce">Responsable e-commerce</option>
+                        </optgroup>
+                        <optgroup label="Créateur de contenu">
+                            <option value="createur-tiktok-youtube">Créateur de contenu TikTok/YouTube</option>
+                            <option value="influenceur">Influenceur/Influenceuse</option>
+                            <option value="videaste">Vidéaste / Réalisateur</option>
+                            <option value="photographe">Photographe</option>
+                            <option value="graphiste-designer">Graphiste / Designer</option>
+                        </optgroup>
+                        <optgroup label="Professions libérales">
+                            <option value="consultant">Consultant indépendant</option>
+                            <option value="avocat-juriste">Avocat / Juriste</option>
+                            <option value="medecin-sante">Médecin / Professionnel de santé</option>
+                            <option value="comptable">Comptable / Expert-comptable</option>
+                            <option value="coach-formateur">Coach / Formateur</option>
+                        </optgroup>
+                        <optgroup label="Commerce / Artisanat">
+                            <option value="commercant">Commerçant</option>
+                            <option value="artisan">Artisan</option>
+                            <option value="restaurateur">Restaurateur</option>
+                            <option value="coiffeur-barbier">Coiffeur / Barbier</option>
+                            <option value="estheticien">Esthéticien/Esthéticienne</option>
+                        </optgroup>
+                        <optgroup label="Autres">
+                            <option value="salarie-reconversion">Salarié en reconversion</option>
+                            <option value="etudiant">Étudiant</option>
+                            <option value="autre">Autre (préciser)</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Entreprise</label>
+                    <input type="text" name="organization" autocomplete="organization" placeholder="Nom de votre entreprise (si applicable)" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Objectif <span class="required">*</span></label>
+                    <select name="objectif" required class="form-select">
+                        <option value="" disabled selected>Quel est votre objectif principal pour cette masterclass ?</option>
+                        <option value="monetiser-contenu">Je veux monétiser mon contenu TikTok/YouTube</option>
+                        <option value="avatars-ia">Je veux créer des avatars IA pour mon business</option>
+                        <option value="presence-digitale">Je veux développer la présence digitale de ma marque</option>
+                        <option value="apprendre-ia">Je veux apprendre à utiliser l'IA pour produire du contenu</option>
+                        <option value="decouvrir">Je découvrirai mes objectifs durant la masterclass</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="cta-btn">Passer au paiement de ma réservation <span style="margin-left:8px">→</span></button>
+            </form>
+
+            <div class="bottom-info">
+                <div class="legal"><a href="https://goldeor.com/mentions-legales/" style="color:#666666;text-decoration:underline">Mentions légales</a> &middot; <a href="https://goldeor.com/cgv/" style="color:#666666;text-decoration:underline">Conditions générales de vente</a> &middot; Paiement 100% sécurisé</div>
+                <div class="payment-logos">Orange Money &middot; MTN MoMo &middot; Wave &middot; Carte bancaire</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // CAROUSEL
+        // ============================================================
+        (function() {
+            var track = document.getElementById('carouselTrack');
+            var dots = document.querySelectorAll('.carousel-dot');
+            var current = 0;
+            var total = dots.length;
+            var interval;
+
+            function goTo(index) {
+                current = index;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach(function(d, i) {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            function next() {
+                goTo((current + 1) % total);
+            }
+
+            function startAuto() {
+                interval = setInterval(next, 4000);
+            }
+
+            function resetAuto() {
+                clearInterval(interval);
+                startAuto();
+            }
+
+            dots.forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                    goTo(parseInt(this.getAttribute('data-index')));
+                    resetAuto();
+                });
+            });
+
+            startAuto();
+        })();
+
+        // ============================================================
+        // COUNTRY PHONE SELECTOR
+        // ============================================================
+        (function() {
+            var priorityCountries = [
+                { name: 'Cameroun', dial: '+237', code: 'CM', flag: '\u{1F1E8}\u{1F1F2}' },
+                { name: "Côte d'Ivoire", dial: '+225', code: 'CI', flag: '\u{1F1E8}\u{1F1EE}' },
+                { name: 'Sénégal', dial: '+221', code: 'SN', flag: '\u{1F1F8}\u{1F1F3}' },
+                { name: 'Congo', dial: '+242', code: 'CG', flag: '\u{1F1E8}\u{1F1EC}' },
+                { name: 'Bénin', dial: '+229', code: 'BJ', flag: '\u{1F1E7}\u{1F1EF}' },
+                { name: 'Burkina Faso', dial: '+226', code: 'BF', flag: '\u{1F1E7}\u{1F1EB}' },
+                { name: 'Togo', dial: '+228', code: 'TG', flag: '\u{1F1F9}\u{1F1EC}' },
+                { name: 'Guinée', dial: '+224', code: 'GN', flag: '\u{1F1EC}\u{1F1F3}' },
+                { name: 'France', dial: '+33', code: 'FR', flag: '\u{1F1EB}\u{1F1F7}' }
+            ];
+
+            var allCountries = [
+                { name: 'Afghanistan', dial: '+93', code: 'AF', flag: '\u{1F1E6}\u{1F1EB}' },
+                { name: 'Afrique du Sud', dial: '+27', code: 'ZA', flag: '\u{1F1FF}\u{1F1E6}' },
+                { name: 'Albanie', dial: '+355', code: 'AL', flag: '\u{1F1E6}\u{1F1F1}' },
+                { name: 'Algérie', dial: '+213', code: 'DZ', flag: '\u{1F1E9}\u{1F1FF}' },
+                { name: 'Allemagne', dial: '+49', code: 'DE', flag: '\u{1F1E9}\u{1F1EA}' },
+                { name: 'Andorre', dial: '+376', code: 'AD', flag: '\u{1F1E6}\u{1F1E9}' },
+                { name: 'Angola', dial: '+244', code: 'AO', flag: '\u{1F1E6}\u{1F1F4}' },
+                { name: 'Antigua-et-Barbuda', dial: '+1268', code: 'AG', flag: '\u{1F1E6}\u{1F1EC}' },
+                { name: 'Arabie saoudite', dial: '+966', code: 'SA', flag: '\u{1F1F8}\u{1F1E6}' },
+                { name: 'Argentine', dial: '+54', code: 'AR', flag: '\u{1F1E6}\u{1F1F7}' },
+                { name: 'Arménie', dial: '+374', code: 'AM', flag: '\u{1F1E6}\u{1F1F2}' },
+                { name: 'Australie', dial: '+61', code: 'AU', flag: '\u{1F1E6}\u{1F1FA}' },
+                { name: 'Autriche', dial: '+43', code: 'AT', flag: '\u{1F1E6}\u{1F1F9}' },
+                { name: 'Azerbaïdjan', dial: '+994', code: 'AZ', flag: '\u{1F1E6}\u{1F1FF}' },
+                { name: 'Bahamas', dial: '+1242', code: 'BS', flag: '\u{1F1E7}\u{1F1F8}' },
+                { name: 'Bahreïn', dial: '+973', code: 'BH', flag: '\u{1F1E7}\u{1F1ED}' },
+                { name: 'Bangladesh', dial: '+880', code: 'BD', flag: '\u{1F1E7}\u{1F1E9}' },
+                { name: 'Barbade', dial: '+1246', code: 'BB', flag: '\u{1F1E7}\u{1F1E7}' },
+                { name: 'Belgique', dial: '+32', code: 'BE', flag: '\u{1F1E7}\u{1F1EA}' },
+                { name: 'Belize', dial: '+501', code: 'BZ', flag: '\u{1F1E7}\u{1F1FF}' },
+                { name: 'Bénin', dial: '+229', code: 'BJ', flag: '\u{1F1E7}\u{1F1EF}' },
+                { name: 'Bhoutan', dial: '+975', code: 'BT', flag: '\u{1F1E7}\u{1F1F9}' },
+                { name: 'Biélorussie', dial: '+375', code: 'BY', flag: '\u{1F1E7}\u{1F1FE}' },
+                { name: 'Birmanie', dial: '+95', code: 'MM', flag: '\u{1F1F2}\u{1F1F2}' },
+                { name: 'Bolivie', dial: '+591', code: 'BO', flag: '\u{1F1E7}\u{1F1F4}' },
+                { name: 'Bosnie-Herzégovine', dial: '+387', code: 'BA', flag: '\u{1F1E7}\u{1F1E6}' },
+                { name: 'Botswana', dial: '+267', code: 'BW', flag: '\u{1F1E7}\u{1F1FC}' },
+                { name: 'Brésil', dial: '+55', code: 'BR', flag: '\u{1F1E7}\u{1F1F7}' },
+                { name: 'Brunei', dial: '+673', code: 'BN', flag: '\u{1F1E7}\u{1F1F3}' },
+                { name: 'Bulgarie', dial: '+359', code: 'BG', flag: '\u{1F1E7}\u{1F1EC}' },
+                { name: 'Burkina Faso', dial: '+226', code: 'BF', flag: '\u{1F1E7}\u{1F1EB}' },
+                { name: 'Burundi', dial: '+257', code: 'BI', flag: '\u{1F1E7}\u{1F1EE}' },
+                { name: 'Cambodge', dial: '+855', code: 'KH', flag: '\u{1F1F0}\u{1F1ED}' },
+                { name: 'Cameroun', dial: '+237', code: 'CM', flag: '\u{1F1E8}\u{1F1F2}' },
+                { name: 'Canada', dial: '+1', code: 'CA', flag: '\u{1F1E8}\u{1F1E6}' },
+                { name: 'Cap-Vert', dial: '+238', code: 'CV', flag: '\u{1F1E8}\u{1F1FB}' },
+                { name: 'Centrafrique', dial: '+236', code: 'CF', flag: '\u{1F1E8}\u{1F1EB}' },
+                { name: 'Chili', dial: '+56', code: 'CL', flag: '\u{1F1E8}\u{1F1F1}' },
+                { name: 'Chine', dial: '+86', code: 'CN', flag: '\u{1F1E8}\u{1F1F3}' },
+                { name: 'Chypre', dial: '+357', code: 'CY', flag: '\u{1F1E8}\u{1F1FE}' },
+                { name: 'Colombie', dial: '+57', code: 'CO', flag: '\u{1F1E8}\u{1F1F4}' },
+                { name: 'Comores', dial: '+269', code: 'KM', flag: '\u{1F1F0}\u{1F1F2}' },
+                { name: 'Congo', dial: '+242', code: 'CG', flag: '\u{1F1E8}\u{1F1EC}' },
+                { name: 'Congo (RDC)', dial: '+243', code: 'CD', flag: '\u{1F1E8}\u{1F1E9}' },
+                { name: 'Corée du Nord', dial: '+850', code: 'KP', flag: '\u{1F1F0}\u{1F1F5}' },
+                { name: 'Corée du Sud', dial: '+82', code: 'KR', flag: '\u{1F1F0}\u{1F1F7}' },
+                { name: 'Costa Rica', dial: '+506', code: 'CR', flag: '\u{1F1E8}\u{1F1F7}' },
+                { name: "Côte d'Ivoire", dial: '+225', code: 'CI', flag: '\u{1F1E8}\u{1F1EE}' },
+                { name: 'Croatie', dial: '+385', code: 'HR', flag: '\u{1F1ED}\u{1F1F7}' },
+                { name: 'Cuba', dial: '+53', code: 'CU', flag: '\u{1F1E8}\u{1F1FA}' },
+                { name: 'Danemark', dial: '+45', code: 'DK', flag: '\u{1F1E9}\u{1F1F0}' },
+                { name: 'Djibouti', dial: '+253', code: 'DJ', flag: '\u{1F1E9}\u{1F1EF}' },
+                { name: 'Dominique', dial: '+1767', code: 'DM', flag: '\u{1F1E9}\u{1F1F2}' },
+                { name: 'Égypte', dial: '+20', code: 'EG', flag: '\u{1F1EA}\u{1F1EC}' },
+                { name: 'Émirats arabes unis', dial: '+971', code: 'AE', flag: '\u{1F1E6}\u{1F1EA}' },
+                { name: 'Équateur', dial: '+593', code: 'EC', flag: '\u{1F1EA}\u{1F1E8}' },
+                { name: 'Érythrée', dial: '+291', code: 'ER', flag: '\u{1F1EA}\u{1F1F7}' },
+                { name: 'Espagne', dial: '+34', code: 'ES', flag: '\u{1F1EA}\u{1F1F8}' },
+                { name: 'Estonie', dial: '+372', code: 'EE', flag: '\u{1F1EA}\u{1F1EA}' },
+                { name: 'Eswatini', dial: '+268', code: 'SZ', flag: '\u{1F1F8}\u{1F1FF}' },
+                { name: 'États-Unis', dial: '+1', code: 'US', flag: '\u{1F1FA}\u{1F1F8}' },
+                { name: 'Éthiopie', dial: '+251', code: 'ET', flag: '\u{1F1EA}\u{1F1F9}' },
+                { name: 'Fidji', dial: '+679', code: 'FJ', flag: '\u{1F1EB}\u{1F1EF}' },
+                { name: 'Finlande', dial: '+358', code: 'FI', flag: '\u{1F1EB}\u{1F1EE}' },
+                { name: 'France', dial: '+33', code: 'FR', flag: '\u{1F1EB}\u{1F1F7}' },
+                { name: 'Gabon', dial: '+241', code: 'GA', flag: '\u{1F1EC}\u{1F1E6}' },
+                { name: 'Gambie', dial: '+220', code: 'GM', flag: '\u{1F1EC}\u{1F1F2}' },
+                { name: 'Géorgie', dial: '+995', code: 'GE', flag: '\u{1F1EC}\u{1F1EA}' },
+                { name: 'Ghana', dial: '+233', code: 'GH', flag: '\u{1F1EC}\u{1F1ED}' },
+                { name: 'Grèce', dial: '+30', code: 'GR', flag: '\u{1F1EC}\u{1F1F7}' },
+                { name: 'Grenade', dial: '+1473', code: 'GD', flag: '\u{1F1EC}\u{1F1E9}' },
+                { name: 'Guatemala', dial: '+502', code: 'GT', flag: '\u{1F1EC}\u{1F1F9}' },
+                { name: 'Guinée', dial: '+224', code: 'GN', flag: '\u{1F1EC}\u{1F1F3}' },
+                { name: 'Guinée équatoriale', dial: '+240', code: 'GQ', flag: '\u{1F1EC}\u{1F1F6}' },
+                { name: 'Guinée-Bissau', dial: '+245', code: 'GW', flag: '\u{1F1EC}\u{1F1FC}' },
+                { name: 'Guyana', dial: '+592', code: 'GY', flag: '\u{1F1EC}\u{1F1FE}' },
+                { name: 'Haïti', dial: '+509', code: 'HT', flag: '\u{1F1ED}\u{1F1F9}' },
+                { name: 'Honduras', dial: '+504', code: 'HN', flag: '\u{1F1ED}\u{1F1F3}' },
+                { name: 'Hongrie', dial: '+36', code: 'HU', flag: '\u{1F1ED}\u{1F1FA}' },
+                { name: 'Inde', dial: '+91', code: 'IN', flag: '\u{1F1EE}\u{1F1F3}' },
+                { name: 'Indonésie', dial: '+62', code: 'ID', flag: '\u{1F1EE}\u{1F1E9}' },
+                { name: 'Irak', dial: '+964', code: 'IQ', flag: '\u{1F1EE}\u{1F1F6}' },
+                { name: 'Iran', dial: '+98', code: 'IR', flag: '\u{1F1EE}\u{1F1F7}' },
+                { name: 'Irlande', dial: '+353', code: 'IE', flag: '\u{1F1EE}\u{1F1EA}' },
+                { name: 'Islande', dial: '+354', code: 'IS', flag: '\u{1F1EE}\u{1F1F8}' },
+                { name: 'Israël', dial: '+972', code: 'IL', flag: '\u{1F1EE}\u{1F1F1}' },
+                { name: 'Italie', dial: '+39', code: 'IT', flag: '\u{1F1EE}\u{1F1F9}' },
+                { name: 'Jamaïque', dial: '+1876', code: 'JM', flag: '\u{1F1EF}\u{1F1F2}' },
+                { name: 'Japon', dial: '+81', code: 'JP', flag: '\u{1F1EF}\u{1F1F5}' },
+                { name: 'Jordanie', dial: '+962', code: 'JO', flag: '\u{1F1EF}\u{1F1F4}' },
+                { name: 'Kazakhstan', dial: '+7', code: 'KZ', flag: '\u{1F1F0}\u{1F1FF}' },
+                { name: 'Kenya', dial: '+254', code: 'KE', flag: '\u{1F1F0}\u{1F1EA}' },
+                { name: 'Kirghizistan', dial: '+996', code: 'KG', flag: '\u{1F1F0}\u{1F1EC}' },
+                { name: 'Kiribati', dial: '+686', code: 'KI', flag: '\u{1F1F0}\u{1F1EE}' },
+                { name: 'Koweït', dial: '+965', code: 'KW', flag: '\u{1F1F0}\u{1F1FC}' },
+                { name: 'Laos', dial: '+856', code: 'LA', flag: '\u{1F1F1}\u{1F1E6}' },
+                { name: 'Lesotho', dial: '+266', code: 'LS', flag: '\u{1F1F1}\u{1F1F8}' },
+                { name: 'Lettonie', dial: '+371', code: 'LV', flag: '\u{1F1F1}\u{1F1FB}' },
+                { name: 'Liban', dial: '+961', code: 'LB', flag: '\u{1F1F1}\u{1F1E7}' },
+                { name: 'Liberia', dial: '+231', code: 'LR', flag: '\u{1F1F1}\u{1F1F7}' },
+                { name: 'Libye', dial: '+218', code: 'LY', flag: '\u{1F1F1}\u{1F1FE}' },
+                { name: 'Liechtenstein', dial: '+423', code: 'LI', flag: '\u{1F1F1}\u{1F1EE}' },
+                { name: 'Lituanie', dial: '+370', code: 'LT', flag: '\u{1F1F1}\u{1F1F9}' },
+                { name: 'Luxembourg', dial: '+352', code: 'LU', flag: '\u{1F1F1}\u{1F1FA}' },
+                { name: 'Macédoine du Nord', dial: '+389', code: 'MK', flag: '\u{1F1F2}\u{1F1F0}' },
+                { name: 'Madagascar', dial: '+261', code: 'MG', flag: '\u{1F1F2}\u{1F1EC}' },
+                { name: 'Malaisie', dial: '+60', code: 'MY', flag: '\u{1F1F2}\u{1F1FE}' },
+                { name: 'Malawi', dial: '+265', code: 'MW', flag: '\u{1F1F2}\u{1F1FC}' },
+                { name: 'Maldives', dial: '+960', code: 'MV', flag: '\u{1F1F2}\u{1F1FB}' },
+                { name: 'Mali', dial: '+223', code: 'ML', flag: '\u{1F1F2}\u{1F1F1}' },
+                { name: 'Malte', dial: '+356', code: 'MT', flag: '\u{1F1F2}\u{1F1F9}' },
+                { name: 'Maroc', dial: '+212', code: 'MA', flag: '\u{1F1F2}\u{1F1E6}' },
+                { name: 'Maurice', dial: '+230', code: 'MU', flag: '\u{1F1F2}\u{1F1FA}' },
+                { name: 'Mauritanie', dial: '+222', code: 'MR', flag: '\u{1F1F2}\u{1F1F7}' },
+                { name: 'Mexique', dial: '+52', code: 'MX', flag: '\u{1F1F2}\u{1F1FD}' },
+                { name: 'Micronésie', dial: '+691', code: 'FM', flag: '\u{1F1EB}\u{1F1F2}' },
+                { name: 'Moldavie', dial: '+373', code: 'MD', flag: '\u{1F1F2}\u{1F1E9}' },
+                { name: 'Monaco', dial: '+377', code: 'MC', flag: '\u{1F1F2}\u{1F1E8}' },
+                { name: 'Mongolie', dial: '+976', code: 'MN', flag: '\u{1F1F2}\u{1F1F3}' },
+                { name: 'Monténégro', dial: '+382', code: 'ME', flag: '\u{1F1F2}\u{1F1EA}' },
+                { name: 'Mozambique', dial: '+258', code: 'MZ', flag: '\u{1F1F2}\u{1F1FF}' },
+                { name: 'Namibie', dial: '+264', code: 'NA', flag: '\u{1F1F3}\u{1F1E6}' },
+                { name: 'Nauru', dial: '+674', code: 'NR', flag: '\u{1F1F3}\u{1F1F7}' },
+                { name: 'Népal', dial: '+977', code: 'NP', flag: '\u{1F1F3}\u{1F1F5}' },
+                { name: 'Nicaragua', dial: '+505', code: 'NI', flag: '\u{1F1F3}\u{1F1EE}' },
+                { name: 'Niger', dial: '+227', code: 'NE', flag: '\u{1F1F3}\u{1F1EA}' },
+                { name: 'Nigeria', dial: '+234', code: 'NG', flag: '\u{1F1F3}\u{1F1EC}' },
+                { name: 'Norvège', dial: '+47', code: 'NO', flag: '\u{1F1F3}\u{1F1F4}' },
+                { name: 'Nouvelle-Zélande', dial: '+64', code: 'NZ', flag: '\u{1F1F3}\u{1F1FF}' },
+                { name: 'Oman', dial: '+968', code: 'OM', flag: '\u{1F1F4}\u{1F1F2}' },
+                { name: 'Ouganda', dial: '+256', code: 'UG', flag: '\u{1F1FA}\u{1F1EC}' },
+                { name: 'Ouzbékistan', dial: '+998', code: 'UZ', flag: '\u{1F1FA}\u{1F1FF}' },
+                { name: 'Pakistan', dial: '+92', code: 'PK', flag: '\u{1F1F5}\u{1F1F0}' },
+                { name: 'Palaos', dial: '+680', code: 'PW', flag: '\u{1F1F5}\u{1F1FC}' },
+                { name: 'Palestine', dial: '+970', code: 'PS', flag: '\u{1F1F5}\u{1F1F8}' },
+                { name: 'Panama', dial: '+507', code: 'PA', flag: '\u{1F1F5}\u{1F1E6}' },
+                { name: 'Papouasie-Nouvelle-Guinée', dial: '+675', code: 'PG', flag: '\u{1F1F5}\u{1F1EC}' },
+                { name: 'Paraguay', dial: '+595', code: 'PY', flag: '\u{1F1F5}\u{1F1FE}' },
+                { name: 'Pays-Bas', dial: '+31', code: 'NL', flag: '\u{1F1F3}\u{1F1F1}' },
+                { name: 'Pérou', dial: '+51', code: 'PE', flag: '\u{1F1F5}\u{1F1EA}' },
+                { name: 'Philippines', dial: '+63', code: 'PH', flag: '\u{1F1F5}\u{1F1ED}' },
+                { name: 'Pologne', dial: '+48', code: 'PL', flag: '\u{1F1F5}\u{1F1F1}' },
+                { name: 'Portugal', dial: '+351', code: 'PT', flag: '\u{1F1F5}\u{1F1F9}' },
+                { name: 'Qatar', dial: '+974', code: 'QA', flag: '\u{1F1F6}\u{1F1E6}' },
+                { name: 'République dominicaine', dial: '+1809', code: 'DO', flag: '\u{1F1E9}\u{1F1F4}' },
+                { name: 'République tchèque', dial: '+420', code: 'CZ', flag: '\u{1F1E8}\u{1F1FF}' },
+                { name: 'Roumanie', dial: '+40', code: 'RO', flag: '\u{1F1F7}\u{1F1F4}' },
+                { name: 'Royaume-Uni', dial: '+44', code: 'GB', flag: '\u{1F1EC}\u{1F1E7}' },
+                { name: 'Russie', dial: '+7', code: 'RU', flag: '\u{1F1F7}\u{1F1FA}' },
+                { name: 'Rwanda', dial: '+250', code: 'RW', flag: '\u{1F1F7}\u{1F1FC}' },
+                { name: 'Saint-Kitts-et-Nevis', dial: '+1869', code: 'KN', flag: '\u{1F1F0}\u{1F1F3}' },
+                { name: 'Saint-Vincent-et-les-Grenadines', dial: '+1784', code: 'VC', flag: '\u{1F1FB}\u{1F1E8}' },
+                { name: 'Sainte-Lucie', dial: '+1758', code: 'LC', flag: '\u{1F1F1}\u{1F1E8}' },
+                { name: 'Salomon', dial: '+677', code: 'SB', flag: '\u{1F1F8}\u{1F1E7}' },
+                { name: 'Salvador', dial: '+503', code: 'SV', flag: '\u{1F1F8}\u{1F1FB}' },
+                { name: 'Samoa', dial: '+685', code: 'WS', flag: '\u{1F1FC}\u{1F1F8}' },
+                { name: 'São Tomé-et-Príncipe', dial: '+239', code: 'ST', flag: '\u{1F1F8}\u{1F1F9}' },
+                { name: 'Sénégal', dial: '+221', code: 'SN', flag: '\u{1F1F8}\u{1F1F3}' },
+                { name: 'Serbie', dial: '+381', code: 'RS', flag: '\u{1F1F7}\u{1F1F8}' },
+                { name: 'Seychelles', dial: '+248', code: 'SC', flag: '\u{1F1F8}\u{1F1E8}' },
+                { name: 'Sierra Leone', dial: '+232', code: 'SL', flag: '\u{1F1F8}\u{1F1F1}' },
+                { name: 'Singapour', dial: '+65', code: 'SG', flag: '\u{1F1F8}\u{1F1EC}' },
+                { name: 'Slovaquie', dial: '+421', code: 'SK', flag: '\u{1F1F8}\u{1F1F0}' },
+                { name: 'Slovénie', dial: '+386', code: 'SI', flag: '\u{1F1F8}\u{1F1EE}' },
+                { name: 'Somalie', dial: '+252', code: 'SO', flag: '\u{1F1F8}\u{1F1F4}' },
+                { name: 'Soudan', dial: '+249', code: 'SD', flag: '\u{1F1F8}\u{1F1E9}' },
+                { name: 'Soudan du Sud', dial: '+211', code: 'SS', flag: '\u{1F1F8}\u{1F1F8}' },
+                { name: 'Sri Lanka', dial: '+94', code: 'LK', flag: '\u{1F1F1}\u{1F1F0}' },
+                { name: 'Suède', dial: '+46', code: 'SE', flag: '\u{1F1F8}\u{1F1EA}' },
+                { name: 'Suisse', dial: '+41', code: 'CH', flag: '\u{1F1E8}\u{1F1ED}' },
+                { name: 'Suriname', dial: '+597', code: 'SR', flag: '\u{1F1F8}\u{1F1F7}' },
+                { name: 'Syrie', dial: '+963', code: 'SY', flag: '\u{1F1F8}\u{1F1FE}' },
+                { name: 'Tadjikistan', dial: '+992', code: 'TJ', flag: '\u{1F1F9}\u{1F1EF}' },
+                { name: 'Tanzanie', dial: '+255', code: 'TZ', flag: '\u{1F1F9}\u{1F1FF}' },
+                { name: 'Tchad', dial: '+235', code: 'TD', flag: '\u{1F1F9}\u{1F1E9}' },
+                { name: 'Thaïlande', dial: '+66', code: 'TH', flag: '\u{1F1F9}\u{1F1ED}' },
+                { name: 'Timor oriental', dial: '+670', code: 'TL', flag: '\u{1F1F9}\u{1F1F1}' },
+                { name: 'Togo', dial: '+228', code: 'TG', flag: '\u{1F1F9}\u{1F1EC}' },
+                { name: 'Tonga', dial: '+676', code: 'TO', flag: '\u{1F1F9}\u{1F1F4}' },
+                { name: 'Trinité-et-Tobago', dial: '+1868', code: 'TT', flag: '\u{1F1F9}\u{1F1F9}' },
+                { name: 'Tunisie', dial: '+216', code: 'TN', flag: '\u{1F1F9}\u{1F1F3}' },
+                { name: 'Turkménistan', dial: '+993', code: 'TM', flag: '\u{1F1F9}\u{1F1F2}' },
+                { name: 'Turquie', dial: '+90', code: 'TR', flag: '\u{1F1F9}\u{1F1F7}' },
+                { name: 'Tuvalu', dial: '+688', code: 'TV', flag: '\u{1F1F9}\u{1F1FB}' },
+                { name: 'Ukraine', dial: '+380', code: 'UA', flag: '\u{1F1FA}\u{1F1E6}' },
+                { name: 'Uruguay', dial: '+598', code: 'UY', flag: '\u{1F1FA}\u{1F1FE}' },
+                { name: 'Vanuatu', dial: '+678', code: 'VU', flag: '\u{1F1FB}\u{1F1FA}' },
+                { name: 'Vatican', dial: '+39', code: 'VA', flag: '\u{1F1FB}\u{1F1E6}' },
+                { name: 'Venezuela', dial: '+58', code: 'VE', flag: '\u{1F1FB}\u{1F1EA}' },
+                { name: 'Viêt Nam', dial: '+84', code: 'VN', flag: '\u{1F1FB}\u{1F1F3}' },
+                { name: 'Yémen', dial: '+967', code: 'YE', flag: '\u{1F1FE}\u{1F1EA}' },
+                { name: 'Zambie', dial: '+260', code: 'ZM', flag: '\u{1F1FF}\u{1F1F2}' },
+                { name: 'Zimbabwe', dial: '+263', code: 'ZW', flag: '\u{1F1FF}\u{1F1FC}' }
+            ];
+
+            var countryBtn = document.getElementById('countryBtn');
+            var countryDropdown = document.getElementById('countryDropdown');
+            var countryList = document.getElementById('countryList');
+            var countrySearch = document.getElementById('countrySearch');
+            var flagDisplay = document.getElementById('flagDisplay');
+            var dialDisplay = document.getElementById('dialDisplay');
+            var phoneInput = document.getElementById('phoneInput');
+            var isOpen = false;
+
+            // Remove priority country codes from allCountries to avoid duplicates
+            var priorityCodes = priorityCountries.map(function(c) { return c.code; });
+
+            function renderList(filter) {
+                var html = '';
+                var query = (filter || '').toLowerCase();
+
+                // Priority countries
+                var filteredPriority = priorityCountries.filter(function(c) {
+                    return !query || c.name.toLowerCase().indexOf(query) !== -1 || c.dial.indexOf(query) !== -1;
+                });
+
+                filteredPriority.forEach(function(c) {
+                    html += '<div class="country-option" data-code="' + c.code + '" data-dial="' + c.dial + '" data-flag="' + c.flag + '">';
+                    html += '<span class="flag">' + c.flag + '</span>';
+                    html += '<span class="name">' + c.name + '</span>';
+                    html += '<span class="dial">' + c.dial + '</span>';
+                    html += '</div>';
+                });
+
+                if (filteredPriority.length > 0) {
+                    html += '<div class="country-divider"></div>';
+                }
+
+                // All other countries
+                var filteredAll = allCountries.filter(function(c) {
+                    return !query || c.name.toLowerCase().indexOf(query) !== -1 || c.dial.indexOf(query) !== -1;
+                });
+
+                filteredAll.forEach(function(c) {
+                    html += '<div class="country-option" data-code="' + c.code + '" data-dial="' + c.dial + '" data-flag="' + c.flag + '">';
+                    html += '<span class="flag">' + c.flag + '</span>';
+                    html += '<span class="name">' + c.name + '</span>';
+                    html += '<span class="dial">' + c.dial + '</span>';
+                    html += '</div>';
+                });
+
+                countryList.innerHTML = html;
+
+                // Attach click handlers
+                countryList.querySelectorAll('.country-option').forEach(function(opt) {
+                    opt.addEventListener('click', function() {
+                        selectCountry(this.getAttribute('data-flag'), this.getAttribute('data-dial'));
+                    });
+                });
+            }
+
+            function selectCountry(flag, dial) {
+                flagDisplay.textContent = flag;
+                dialDisplay.textContent = dial;
+                closeDropdown();
+                phoneInput.focus();
+            }
+
+            function openDropdown() {
+                isOpen = true;
+                countryDropdown.classList.add('open');
+                countrySearch.value = '';
+                renderList('');
+                setTimeout(function() { countrySearch.focus(); }, 50);
+            }
+
+            function closeDropdown() {
+                isOpen = false;
+                countryDropdown.classList.remove('open');
+            }
+
+            countryBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (isOpen) {
+                    closeDropdown();
+                } else {
+                    openDropdown();
+                }
+            });
+
+            countrySearch.addEventListener('input', function() {
+                renderList(this.value);
+            });
+
+            countrySearch.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            document.addEventListener('click', function(e) {
+                if (isOpen && !countryDropdown.contains(e.target) && e.target !== countryBtn) {
+                    closeDropdown();
+                }
+            });
+
+            // Initial render
+            renderList('');
+        })();
+
+        // ============================================================
+        // FORM SUBMIT (placeholder)
+        // ============================================================
+        document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // TODO: integrate with payment gateway
+            alert('Redirection vers le paiement...');
+        });
+    </script>
+</body>
+</html>
