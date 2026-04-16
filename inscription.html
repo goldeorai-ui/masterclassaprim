@@ -1197,8 +1197,12 @@
         // ============================================================
         document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // TODO: integrate with payment gateway
-            alert('Redirection vers le paiement...');
+            var form = e.target;
+            if (form.checkValidity()) {
+                window.location.href = 'paiement.html';
+            } else {
+                form.reportValidity();
+            }
         });
     </script>
 </body>
