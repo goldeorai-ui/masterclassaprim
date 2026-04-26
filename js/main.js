@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Blobs parallax ───────────────────────────────────────
   // (géré par blobs.js)
 
-  console.log('%c✦ Goldeor — MasterClass Avril 2026',
+  console.log('%c✦ Goldeor — MasterClass Mai 2026',
     'color: #47FFEE; font-weight: bold; font-size: 14px;');
 });

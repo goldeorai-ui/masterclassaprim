@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservez votre place - Masterclass Goldeor 24 &amp; 25 Avril 2026</title>
+    <title>Réservez votre place - Masterclass Goldeor 7 &amp; 8 Mai 2026</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/png" href="assets/images/Favicon goldeor landing page.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1190,6 +1190,26 @@
 
             // Initial render
             renderList('');
+
+            // Geo-detection : auto-select country based on user's IP
+            (function detectCountry() {
+                fetch('https://ipapi.co/json/', { cache: 'no-store' })
+                    .then(function(r) { return r.ok ? r.json() : null; })
+                    .then(function(data) {
+                        if (!data || !data.country_code) return;
+                        var code = data.country_code.toUpperCase();
+                        var match = priorityCountries.concat(allCountries).find(function(c) {
+                            return c.code === code;
+                        });
+                        if (match) {
+                            flagDisplay.textContent = match.flag;
+                            dialDisplay.textContent = match.dial;
+                        }
+                    })
+                    .catch(function() {
+                        // Fallback silencieux : on garde le Cameroun par défaut
+                    });
+            })();
         })();
 
         // ============================================================
@@ -1199,7 +1219,7 @@
             e.preventDefault();
             var form = e.target;
             if (form.checkValidity()) {
-                window.location.href = 'paiement.html';
+                window.location.href = 'https://checkout.goldeor.com/fr/products/votre-ticket-dacces-masterclass-goldeor-comment-gagner-la-nouvelle-ruee-vers-lor/checkout';
             } else {
                 form.reportValidity();
             }
