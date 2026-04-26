@@ -28,6 +28,12 @@
     border 0.3s ease;
 }
 
+.sticky-bar--scrolled {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
 .sticky-bar__inner {
   max-width: 1100px;
   margin: 0 auto;

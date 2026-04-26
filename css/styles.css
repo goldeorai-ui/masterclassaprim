@@ -50,7 +50,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth retiré (causait une friction perçue) */
+  /* Smooth réservé aux liens d'ancre via @supports */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Smooth uniquement quand l'utilisateur clique un lien d'ancre */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -61,6 +69,15 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+/* Isoler le layout des sections — évite les repaints en cascade au scroll */
+.section,
+.hero,
+.logos,
+.footer {
+  contain: layout style;
 }
 
 img {

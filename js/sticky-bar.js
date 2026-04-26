@@ -4,22 +4,29 @@
    Renforce l'opacité du fond glassmorphique au scroll
    ============================================================ */
 
-const stickyBar = document.getElementById('stickyBar');
+(function () {
+  var stickyBar = document.getElementById('stickyBar');
+  if (!stickyBar) return;
 
-if (stickyBar) {
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+  var isScrolled = null;
+  var ticking = false;
 
-    if (scrollY > 10) {
-      stickyBar.style.background = 'rgba(0, 0, 0, 0.72)';
-      stickyBar.style.backdropFilter = 'blur(20px)';
-      stickyBar.style.webkitBackdropFilter = 'blur(20px)';
-      stickyBar.style.border = '1px solid rgba(255, 255, 255, 0.10)';
-    } else {
-      stickyBar.style.background = 'rgba(255, 255, 255, 0.05)';
-      stickyBar.style.backdropFilter = 'blur(16px)';
-      stickyBar.style.webkitBackdropFilter = 'blur(16px)';
-      stickyBar.style.border = '1px solid rgba(255, 255, 255, 0.10)';
+  function update() {
+    var scrolled = window.scrollY > 10;
+    if (scrolled !== isScrolled) {
+      isScrolled = scrolled;
+      stickyBar.classList.toggle('sticky-bar--scrolled', scrolled);
     }
-  });
-}
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  update();
+})();
