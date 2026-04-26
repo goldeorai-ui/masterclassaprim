@@ -312,6 +312,28 @@
             margin-bottom: 6px;
         }
 
+        /* Error states */
+        .form-input.is-invalid,
+        .form-select.is-invalid {
+            border-color: #ff4444;
+        }
+
+        .phone-wrapper.is-invalid .country-btn,
+        .phone-wrapper.is-invalid .phone-input {
+            border-color: #ff4444;
+        }
+
+        .form-error {
+            display: none;
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .form-error.is-visible {
+            display: block;
+        }
+
         .form-label .required {
             color: #ECA0C0;
             margin-left: 2px;
@@ -704,16 +726,19 @@
                     <div class="form-group">
                         <label class="form-label">Prénom <span class="required">*</span></label>
                         <input type="text" name="fname" autocomplete="given-name" placeholder="Votre prénom" required class="form-input">
+                        <div class="form-error" data-error-for="fname">Ce champ est obligatoire</div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Nom <span class="required">*</span></label>
                         <input type="text" name="lname" autocomplete="family-name" placeholder="Votre nom" required class="form-input">
+                        <div class="form-error" data-error-for="lname">Ce champ est obligatoire</div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Email <span class="required">*</span></label>
                     <input type="email" name="email" autocomplete="email" placeholder="votre@email.com" required class="form-input">
+                    <div class="form-error" data-error-for="email">Ce champ est obligatoire</div>
                 </div>
 
                 <div class="form-group">
@@ -732,6 +757,7 @@
                         </div>
                         <input type="tel" name="tel" autocomplete="tel" placeholder="Votre numéro" required class="phone-input" id="phoneInput">
                     </div>
+                    <div class="form-error" data-error-for="tel">Ce champ est obligatoire</div>
                 </div>
 
                 <div class="form-group">
@@ -778,6 +804,7 @@
                             <option value="autre">Autre (préciser)</option>
                         </optgroup>
                     </select>
+                    <div class="form-error" data-error-for="profession">Ce champ est obligatoire</div>
                 </div>
 
                 <div class="form-group">
@@ -796,6 +823,7 @@
                         <option value="decouvrir">Je découvrirai mes objectifs durant la masterclass</option>
                         <option value="autre">Autre</option>
                     </select>
+                    <div class="form-error" data-error-for="objectif">Ce champ est obligatoire</div>
                 </div>
 
                 <button type="submit" class="cta-btn">Passer au paiement de ma réservation <span style="margin-left:8px">→</span></button>
@@ -1191,34 +1219,122 @@
         // ============================================================
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyY5jdn07NNPRFcT9orCXvz9xgP6k-uxHcc3JsyKMzMF09arKtqj_XR7f8WKth7NsZJ-A/exec';
 
-        async function submitForm(event) {
-          event.preventDefault();
+        // ── Validation helpers ──────────────────────────────────
+        function showError(name, message) {
+            var field = document.querySelector('[name="' + name + '"]');
+            var errorEl = document.querySelector('.form-error[data-error-for="' + name + '"]');
+            if (errorEl) {
+                if (message) errorEl.textContent = message;
+                errorEl.classList.add('is-visible');
+            }
+            if (field) {
+                if (name === 'tel') {
+                    var wrapper = field.closest('.phone-wrapper');
+                    if (wrapper) wrapper.classList.add('is-invalid');
+                } else {
+                    field.classList.add('is-invalid');
+                }
+            }
+        }
 
-          const btn = document.querySelector('button[type="submit"]');
-          btn.textContent = 'Envoi en cours...';
-          btn.disabled = true;
+        function clearError(name) {
+            var field = document.querySelector('[name="' + name + '"]');
+            var errorEl = document.querySelector('.form-error[data-error-for="' + name + '"]');
+            if (errorEl) {
+                errorEl.classList.remove('is-visible');
+                errorEl.textContent = 'Ce champ est obligatoire';
+            }
+            if (field) {
+                if (name === 'tel') {
+                    var wrapper = field.closest('.phone-wrapper');
+                    if (wrapper) wrapper.classList.remove('is-invalid');
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            }
+        }
 
-          const params = new URLSearchParams({
-            prenom: document.querySelector('[name="fname"]').value,
-            nom: document.querySelector('[name="lname"]').value,
-            email: document.querySelector('[name="email"]').value,
-            telephone: document.querySelector('[name="tel"]').value,
-            profession: document.querySelector('[name="profession"]').value,
-            entreprise: document.querySelector('[name="organization"]').value,
-            objectif: document.querySelector('[name="objectif"]').value,
-            source: document.referrer || 'Accès direct'
-          });
+        function validateForm() {
+            var isValid = true;
+            var requiredFields = ['fname', 'lname', 'email', 'tel', 'profession', 'objectif'];
 
-          try {
-            await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
-              method: 'GET',
-              mode: 'no-cors'
+            // Reset all errors before validation
+            requiredFields.forEach(function (n) { clearError(n); });
+
+            // Required check
+            requiredFields.forEach(function (name) {
+                var field = document.querySelector('[name="' + name + '"]');
+                if (!field) return;
+                if (!field.value || field.value.trim() === '') {
+                    showError(name, 'Ce champ est obligatoire');
+                    isValid = false;
+                }
             });
-          } catch (error) {
-            console.error('Erreur envoi données:', error);
-          }
 
-          window.location.href = 'https://checkout.goldeor.com/fr/products/votre-ticket-dacces-masterclass-goldeor-comment-gagner-la-nouvelle-ruee-vers-lor/checkout';
+            // Email format
+            var email = document.querySelector('[name="email"]');
+            if (email && email.value.trim() !== '') {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value.trim())) {
+                    showError('email', 'Veuillez entrer un email valide');
+                    isValid = false;
+                }
+            }
+
+            // Phone : au moins 5 chiffres
+            var tel = document.querySelector('[name="tel"]');
+            if (tel && tel.value.trim() !== '') {
+                var digits = tel.value.replace(/\D/g, '');
+                if (digits.length < 5) {
+                    showError('tel', 'Veuillez entrer un numéro valide');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        // Clear errors when user starts typing / changing
+        ['fname', 'lname', 'email', 'tel', 'profession', 'objectif'].forEach(function (name) {
+            var field = document.querySelector('[name="' + name + '"]');
+            if (!field) return;
+            var clearEvent = (field.tagName === 'SELECT') ? 'change' : 'input';
+            field.addEventListener(clearEvent, function () { clearError(name); });
+        });
+
+        // ── Submit ──────────────────────────────────────────────
+        async function submitForm(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            const btn = document.querySelector('button[type="submit"]');
+            btn.textContent = 'Envoi en cours...';
+            btn.disabled = true;
+
+            const params = new URLSearchParams({
+                prenom: document.querySelector('[name="fname"]').value,
+                nom: document.querySelector('[name="lname"]').value,
+                email: document.querySelector('[name="email"]').value,
+                telephone: document.querySelector('[name="tel"]').value,
+                profession: document.querySelector('[name="profession"]').value,
+                entreprise: document.querySelector('[name="organization"]').value,
+                objectif: document.querySelector('[name="objectif"]').value,
+                source: document.referrer || 'Accès direct'
+            });
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+                    method: 'GET',
+                    mode: 'no-cors'
+                });
+            } catch (error) {
+                console.error('Erreur envoi données:', error);
+            }
+
+            window.location.href = 'https://checkout.goldeor.com/fr/products/votre-ticket-dacces-masterclass-goldeor-comment-gagner-la-nouvelle-ruee-vers-lor/checkout';
         }
 
         document.querySelector('form').addEventListener('submit', submitForm);
