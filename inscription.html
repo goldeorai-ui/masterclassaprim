@@ -1187,17 +1187,41 @@
         })();
 
         // ============================================================
-        // FORM SUBMIT (placeholder)
+        // FORM SUBMIT — Envoi vers Google Sheets puis redirection
         // ============================================================
-        document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var form = e.target;
-            if (form.checkValidity()) {
-                window.location.href = 'https://checkout.goldeor.com/fr/products/votre-ticket-dacces-masterclass-goldeor-comment-gagner-la-nouvelle-ruee-vers-lor/checkout';
-            } else {
-                form.reportValidity();
-            }
-        });
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyY5jdn07NNPRFcT9orCXvz9xgP6k-uxHcc3JsyKMzMF09arKtqj_XR7f8WKth7NsZJ-A/exec';
+
+        async function submitForm(event) {
+          event.preventDefault();
+
+          const btn = document.querySelector('button[type="submit"]');
+          btn.textContent = 'Envoi en cours...';
+          btn.disabled = true;
+
+          const params = new URLSearchParams({
+            prenom: document.querySelector('[name="fname"]').value,
+            nom: document.querySelector('[name="lname"]').value,
+            email: document.querySelector('[name="email"]').value,
+            telephone: document.querySelector('[name="tel"]').value,
+            profession: document.querySelector('[name="profession"]').value,
+            entreprise: document.querySelector('[name="organization"]').value,
+            objectif: document.querySelector('[name="objectif"]').value,
+            source: document.referrer || 'Accès direct'
+          });
+
+          try {
+            await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+              method: 'GET',
+              mode: 'no-cors'
+            });
+          } catch (error) {
+            console.error('Erreur envoi données:', error);
+          }
+
+          window.location.href = 'https://checkout.goldeor.com/fr/products/votre-ticket-dacces-masterclass-goldeor-comment-gagner-la-nouvelle-ruee-vers-lor/checkout';
+        }
+
+        document.querySelector('form').addEventListener('submit', submitForm);
     </script>
 </body>
 </html>
