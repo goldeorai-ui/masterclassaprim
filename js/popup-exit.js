@@ -100,8 +100,8 @@
       +     '<div class="gdr-popup-cd-item"><span class="gdr-popup-cd-num" data-cd="s">00</span><span class="gdr-popup-cd-lbl">Secondes</span></div>'
       +   '</div>'
       +   '<h2 class="gdr-popup-title" id="gdrPopupTitle">Attends, ta place n\'est pas encore réservée.</h2>'
-      +   '<p class="gdr-popup-sub">12 799 EUR de bonus offerts. 2 soirées. 8 modules. 53,36 € / 35 000 FCFA tout inclus.</p>'
-      +   '<a href="inscription.html" class="gdr-popup-cta">Je réserve ma place maintenant</a>'
+      +   '<p class="gdr-popup-sub">12 799 EUR de bonus offerts. 2 soirées. 8 modules. Gratuit, tout inclus.</p>'
+      +   '<a href="inscription.html" class="gdr-popup-cta">Je réserve ma place gratuitement</a>'
       +   '<button type="button" class="gdr-popup-decline">Non merci, je préfère rater ça</button>'
       + '</div>';
     document.body.appendChild(overlay);

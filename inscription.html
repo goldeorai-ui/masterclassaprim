@@ -203,6 +203,40 @@
             flex-direction: column;
         }
 
+        /* COUNTDOWN */
+        .insc-countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .insc-cd-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px 6px;
+            text-align: center;
+        }
+
+        .insc-cd-num {
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .insc-cd-lbl {
+            display: block;
+            font-size: 10px;
+            color: #AAAAAA;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         /* PROGRESS BAR */
         .progress-bar {
             display: flex;
@@ -699,6 +733,15 @@
         <!-- RIGHT COLUMN -->
         <div class="right-col">
             <img src="assets/images/logo-goldeor.webp" alt="Goldeor" class="logo-mobile">
+
+            <!-- Countdown -->
+            <div class="insc-countdown" id="inscCountdown">
+                <div class="insc-cd-item"><span class="insc-cd-num" data-cd="d">00</span><span class="insc-cd-lbl">Jours</span></div>
+                <div class="insc-cd-item"><span class="insc-cd-num" data-cd="h">00</span><span class="insc-cd-lbl">Heures</span></div>
+                <div class="insc-cd-item"><span class="insc-cd-num" data-cd="m">00</span><span class="insc-cd-lbl">Minutes</span></div>
+                <div class="insc-cd-item"><span class="insc-cd-num" data-cd="s">00</span><span class="insc-cd-lbl">Secondes</span></div>
+            </div>
+
             <!-- Progress Bar -->
             <div class="progress-bar">
                 <div class="step">
@@ -708,12 +751,7 @@
                 <div class="step-line"></div>
                 <div class="step">
                     <div class="step-circle future">2</div>
-                    <span class="step-label future">Mode de paiement</span>
-                </div>
-                <div class="step-line"></div>
-                <div class="step">
-                    <div class="step-circle future">3</div>
-                    <span class="step-label future">Confirmation de paiement</span>
+                    <span class="step-label future">Confirmation de réservation</span>
                 </div>
             </div>
 
@@ -826,12 +864,11 @@
                     <div class="form-error" data-error-for="objectif">Ce champ est obligatoire</div>
                 </div>
 
-                <button type="submit" class="cta-btn">Passer au paiement de ma réservation <span style="margin-left:8px">→</span></button>
+                <button type="submit" class="cta-btn">Je réserve ma place gratuitement <span style="margin-left:8px">→</span></button>
             </form>
 
             <div class="bottom-info">
-                <div class="legal"><a href="https://goldeor.com/mentions-legales/" style="color:#666666;text-decoration:underline">Mentions légales</a> &middot; <a href="https://goldeor.com/cgv/" style="color:#666666;text-decoration:underline">Conditions générales de vente</a> &middot; Paiement 100% sécurisé</div>
-                <div class="payment-logos">Orange Money &middot; MTN MoMo &middot; Wave &middot; Carte bancaire</div>
+                <div class="legal"><a href="https://goldeor.com/mentions-legales/" style="color:#666666;text-decoration:underline">Mentions légales</a> &middot; <a href="https://goldeor.com/cgv/" style="color:#666666;text-decoration:underline">Conditions générales de vente</a></div>
             </div>
         </div>
     </div>
@@ -1215,6 +1252,35 @@
         })();
 
         // ============================================================
+        // COUNTDOWN — vers le 7 mai 2026 à 20h00 (Paris)
+        // ============================================================
+        (function () {
+            var TARGET = new Date('2026-05-07T20:00:00+02:00');
+            var dEl = document.querySelector('#inscCountdown [data-cd="d"]');
+            var hEl = document.querySelector('#inscCountdown [data-cd="h"]');
+            var mEl = document.querySelector('#inscCountdown [data-cd="m"]');
+            var sEl = document.querySelector('#inscCountdown [data-cd="s"]');
+            if (!dEl) return;
+
+            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+            function update() {
+                var diff = TARGET - new Date();
+                if (diff <= 0) diff = 0;
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff / 3600000) % 24);
+                var m = Math.floor((diff / 60000) % 60);
+                var s = Math.floor((diff / 1000) % 60);
+                dEl.textContent = pad(d);
+                hEl.textContent = pad(h);
+                mEl.textContent = pad(m);
+                sEl.textContent = pad(s);
+            }
+            update();
+            setInterval(update, 1000);
+        })();
+
+        // ============================================================
         // FORM SUBMIT — Envoi vers Google Sheets puis redirection
         // ============================================================
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyY5jdn07NNPRFcT9orCXvz9xgP6k-uxHcc3JsyKMzMF09arKtqj_XR7f8WKth7NsZJ-A/exec';
@@ -1334,7 +1400,7 @@
                 console.error('Erreur envoi données:', error);
             }
 
-            window.location.href = 'https://checkout.goldeor.com/fr/products/votre-ticket-dacces-masterclass-goldeor-comment-gagner-la-nouvelle-ruee-vers-lor/checkout';
+            window.location.href = 'https://www.goldeor.com/masterclass/success/';
         }
 
         document.querySelector('form').addEventListener('submit', submitForm);
