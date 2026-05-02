@@ -1370,37 +1370,38 @@
 
         // ── Submit ──────────────────────────────────────────────
         async function submitForm(event) {
-            event.preventDefault();
+          event.preventDefault();
 
-            if (!validateForm()) {
-                return;
-            }
+          if (!validateForm()) {
+            return;
+          }
 
-            const btn = document.querySelector('button[type="submit"]');
-            btn.textContent = 'Envoi en cours...';
-            btn.disabled = true;
+          const btn = document.querySelector('button[type="submit"]');
+          btn.textContent = 'Envoi en cours...';
+          btn.disabled = true;
 
-            const params = new URLSearchParams({
-                prenom: document.querySelector('[name="fname"]').value,
-                nom: document.querySelector('[name="lname"]').value,
-                email: document.querySelector('[name="email"]').value,
-                telephone: document.querySelector('[name="tel"]').value,
-                profession: document.querySelector('[name="profession"]').value,
-                entreprise: document.querySelector('[name="organization"]').value,
-                objectif: document.querySelector('[name="objectif"]').value,
-                source: document.referrer || 'Accès direct'
+          const formData = new URLSearchParams({
+            prenom: document.querySelector('[name="fname"]').value,
+            nom: document.querySelector('[name="lname"]').value,
+            email: document.querySelector('[name="email"]').value,
+            telephone: document.querySelector('[name="tel"]').value,
+            profession: document.querySelector('[name="profession"]').value,
+            entreprise: document.querySelector('[name="organization"]').value,
+            objectif: document.querySelector('[name="objectif"]').value,
+            source: document.referrer || 'Accès direct'
+          });
+
+          try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: formData
             });
+          } catch (error) {
+            console.error('Erreur envoi données:', error);
+          }
 
-            try {
-                await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
-                    method: 'GET',
-                    mode: 'no-cors'
-                });
-            } catch (error) {
-                console.error('Erreur envoi données:', error);
-            }
-
-            window.location.href = 'https://www.goldeor.com/masterclass/success/';
+          window.location.href = 'https://www.goldeor.com/masterclass/success/';
         }
 
         document.querySelector('form').addEventListener('submit', submitForm);
