@@ -1300,9 +1300,9 @@
         })();
 
         // ============================================================
-        // FORM SUBMIT — Envoi vers Google Sheets puis redirection
+        // FORM SUBMIT — Envoi vers webhook Make puis redirection
         // ============================================================
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyY5jdn07NNPRFcT9orCXvz9xgP6k-uxHcc3JsyKMzMF09arKtqj_XR7f8WKth7NsZJ-A/exec';
+        const WEBHOOK_URL = 'https://hook.eu2.make.com/2xv520tq2nff6tde7v9ueb9me2rz0v7r';
 
         // ── Validation helpers ──────────────────────────────────
         function showError(name, message) {
@@ -1411,7 +1411,7 @@
           });
 
           try {
-            await fetch(GOOGLE_SCRIPT_URL, {
+            await fetch(WEBHOOK_URL, {
               method: 'POST',
               mode: 'no-cors',
               body: formData
